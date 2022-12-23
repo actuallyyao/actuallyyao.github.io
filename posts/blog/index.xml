@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>🏖️Life on Yao&#39;s blog</title>
+    <title>⛱Life on Yao&#39;s blog</title>
     <link>http://actuallyyao.github.io/posts/blog/</link>
-    <description>Recent content in 🏖️Life on Yao&#39;s blog</description>
+    <description>Recent content in ⛱Life on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Dec 2022 19:28:16 +0800</lastBuildDate><atom:link href="http://actuallyyao.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 19:27:51 +0800</lastBuildDate><atom:link href="http://actuallyyao.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Second</title>
-      <link>http://actuallyyao.github.io/posts/blog/second/</link>
-      <pubDate>Fri, 23 Dec 2022 19:28:16 +0800</pubDate>
-      
-      <guid>http://actuallyyao.github.io/posts/blog/second/</guid>
-      <description>this is second</description>
-    </item>
-    
-    <item>
-      <title>First</title>
+      <title>Writing practice I</title>
       <link>http://actuallyyao.github.io/posts/blog/first/</link>
       <pubDate>Fri, 23 Dec 2022 19:27:51 +0800</pubDate>
       
       <guid>http://actuallyyao.github.io/posts/blog/first/</guid>
-      <description>this is first
-I want this to be good from statsmodels import ols </description>
+      <description>The graph below shows the proportion of four different materials that were recycled from 1982 to 2010 in a particular country.
+Summarize the information by selecting and reporting the main features, and make comparisons where relevant.
+Write at least 150 words.
+Thr graph
+header1 header2 参考</description>
     </item>
     
   </channel>
