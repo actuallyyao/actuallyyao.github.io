@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://actuallyyao.github.io/posts/blog/</loc>
+    <loc>http://actuallyyao.github.io/tags/language/</loc>
     <lastmod>2022-12-23T19:27:51+08:00</lastmod>
   </url><url>
     <loc>http://actuallyyao.github.io/posts/</loc>
     <lastmod>2022-12-23T19:27:51+08:00</lastmod>
   </url><url>
-    <loc>http://actuallyyao.github.io/tags/ilets/</loc>
+    <loc>http://actuallyyao.github.io/posts/blog/</loc>
     <lastmod>2022-12-23T19:27:51+08:00</lastmod>
   </url><url>
     <loc>http://actuallyyao.github.io/tags/</loc>
     <lastmod>2022-12-23T19:27:51+08:00</lastmod>
   </url><url>
-    <loc>http://actuallyyao.github.io/posts/blog/first/</loc>
+    <loc>http://actuallyyao.github.io/posts/blog/writing_prac_1/</loc>
     <lastmod>2022-12-23T19:27:51+08:00</lastmod>
   </url><url>
     <loc>http://actuallyyao.github.io/</loc>
@@ -22,8 +22,10 @@
   </url><url>
     <loc>http://actuallyyao.github.io/archives/</loc>
   </url><url>
-    <loc>http://actuallyyao.github.io/tags/</loc>
-  </url><url>
     <loc>http://actuallyyao.github.io/categories/</loc>
+  </url><url>
+    <loc>http://actuallyyao.github.io/search/</loc>
+  </url><url>
+    <loc>http://actuallyyao.github.io/tags/</loc>
   </url>
 </urlset>
