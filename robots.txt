@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://actuallyyao.github.io/sitemap.xml
