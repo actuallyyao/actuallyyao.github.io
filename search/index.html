@@ -7,17 +7,16 @@
 <meta name="robots" content="index, follow">
 <title>Search | Yao&#39;s blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Search - Yao&#39;s blog">
+<meta name="description" content="search">
 <meta name="author" content="Yao">
 <link rel="canonical" href="http://actuallyyao.github.io/search/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4a287fe2e3afaf16b159e25750b8817323f7c91aa6dcf761cd7a01ef3e8a2e99.css" integrity="sha256-Sih/4uOvrxaxWeJXULiBcyP3yRqm3PdhzXoB7z6KLpk=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="http://actuallyyao.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://actuallyyao.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://actuallyyao.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://actuallyyao.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="http://actuallyyao.github.io/safari-pinned-tab.svg">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d028013e07035118dc06cfe36bfa650ff7e4aaef769d770f7c306647e4ec6e9e.css" integrity="sha256-0CgBPgcDURjcBs/ja/plD/fkqu92nXcPfDBmR&#43;Tsbp4=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<script defer crossorigin="anonymous" src="/assets/js/search.7e97bedbca50c8ca89f1dcab5ea7115989851210c635903ebbb8327ae08c519e.js" integrity="sha256-fpe&#43;28pQyMqJ8dyrXqcRWYmFEhDGNZA&#43;u7gyeuCMUZ4="></script>
+<link rel="icon" href="http://actuallyyao.github.io/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://actuallyyao.github.io/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://actuallyyao.github.io/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://actuallyyao.github.io/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="http://actuallyyao.github.io/favicon/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -29,7 +28,7 @@
 
     </style>
 </noscript><meta property="og:title" content="Search" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="search" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://actuallyyao.github.io/search/" /><meta property="article:section" content="" />
 
@@ -37,7 +36,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Search"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="search"/>
 
 
 <script type="application/ld+json">
@@ -60,7 +59,7 @@
   "@type": "BlogPosting",
   "headline": "Search",
   "name": "Search",
-  "description": "",
+  "description": "search",
   "keywords": [
     
   ],
@@ -82,19 +81,21 @@
     "name": "Yao's blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://actuallyyao.github.io/favicon.ico"
+      "url": "http://actuallyyao.github.io/favicon/favicon.ico"
     }
   }
 }
 </script>
 </head>
 
-<body class="" id="top">
+<body class="list" id="top">
 
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://actuallyyao.github.io/" accesskey="h" title="Yao&#39;s blog (Alt + H)">Yao&#39;s blog</a>
+            <a href="http://actuallyyao.github.io/" accesskey="h" title="Yao&#39;s World (Alt + H)">
+                <img src="http://actuallyyao.github.io/img/icon.png" alt="" aria-label="logo"
+                    height="30">Yao&#39;s World</a>
             <div class="logo-switches">
             </div>
         </div>
@@ -120,7 +121,7 @@
                 </a>
             </li>
             <li>
-                <a href="http://actuallyyao.github.io/search/" title="Search">
+                <a href="http://actuallyyao.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span class="active">Search</span>
                 </a>
             </li>
@@ -129,22 +130,21 @@
 </header>
 <main class="main">
 
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="http://actuallyyao.github.io/">Home</a></div>
-    <h1 class="post-title">
-      Search
+<header class="page-header">
+    <h1>Search <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
     </h1>
-    <div class="post-meta">0 min&nbsp;·&nbsp;Yao
+    <div class="post-meta"></div>
+</header>
 
+<div id="searchbox">
+    <input id="searchInput" autofocus placeholder="placeholder text in search input box"
+        aria-label="search" type="search" autocomplete="off">
+    <ul id="searchResults" aria-label="search results"></ul>
 </div>
-  </header> 
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
     </main>
     
 <footer class="footer">
@@ -202,53 +202,6 @@
         }
     };
 
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
 </script>
 </body>
 
