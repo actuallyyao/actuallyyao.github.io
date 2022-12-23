@@ -22,8 +22,10 @@
       <pubDate>Fri, 23 Dec 2022 19:27:51 +0800</pubDate>
       
       <guid>http://example.org/posts/first/</guid>
-      <description>this is first</description>
+      <description>this is first
+I want this to be good from statsmodels import ols </description>
     </item>
+    
     
   </channel>
 </rss>
