@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Line plot with Seaborn | Yao&#39;s blog</title>
+<meta name="keywords" content="Data Visualization">
+<meta name="description" content="Use Seaborn&rsquo;s relplot() with hue, hue_order, style, markers parameters to fully customize the chart
+1sns.set_style(&#39;darkgrid&#39;) 2sns.set_palette(&#39;deep&#39;) 3sns.set_context(&#39;paper&#39;) 4 5g = sns.relplot(x=&#39;model_year_full&#39;, 6 y=&#39;horsepower&#39;, 7 data=car, 8 kind=&#39;line&#39;, 9 style=&#39;origin&#39;, 10 hue=&#39;origin&#39;, 11 hue_order=[&#39;usa&#39;, &#39;europe&#39;, &#39;japan&#39;], 12 markers=True, 13 errorbar=&#39;sd&#39;, 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle(&#39;Car Model Year vs Hourse Power by Origin&#39;, y=1.">
+<meta name="author" content="Yao">
+<link rel="canonical" href="https://actuallyyao.github.io/posts/data-analysis/seaborn_1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9114e8c3f45e08387cc2bc83262b8662419a460a6bd41bce6e5a108408f3ae36.css" integrity="sha256-kRTow/ReCDh8wryDJiuGYkGaRgpr1BvObloQhAjzrjY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://actuallyyao.github.io/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.github.io/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.github.io/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://actuallyyao.github.io/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="https://actuallyyao.github.io/favicon/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Line plot with Seaborn" />
+<meta property="og:description" content="Use Seaborn&rsquo;s relplot() with hue, hue_order, style, markers parameters to fully customize the chart
+1sns.set_style(&#39;darkgrid&#39;) 2sns.set_palette(&#39;deep&#39;) 3sns.set_context(&#39;paper&#39;) 4 5g = sns.relplot(x=&#39;model_year_full&#39;, 6 y=&#39;horsepower&#39;, 7 data=car, 8 kind=&#39;line&#39;, 9 style=&#39;origin&#39;, 10 hue=&#39;origin&#39;, 11 hue_order=[&#39;usa&#39;, &#39;europe&#39;, &#39;japan&#39;], 12 markers=True, 13 errorbar=&#39;sd&#39;, 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle(&#39;Car Model Year vs Hourse Power by Origin&#39;, y=1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actuallyyao.github.io/posts/data-analysis/seaborn_1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-26T01:31:51+08:00" />
+<meta property="article:modified_time" content="2022-12-26T01:31:51+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Line plot with Seaborn"/>
+<meta name="twitter:description" content="Use Seaborn&rsquo;s relplot() with hue, hue_order, style, markers parameters to fully customize the chart
+1sns.set_style(&#39;darkgrid&#39;) 2sns.set_palette(&#39;deep&#39;) 3sns.set_context(&#39;paper&#39;) 4 5g = sns.relplot(x=&#39;model_year_full&#39;, 6 y=&#39;horsepower&#39;, 7 data=car, 8 kind=&#39;line&#39;, 9 style=&#39;origin&#39;, 10 hue=&#39;origin&#39;, 11 hue_order=[&#39;usa&#39;, &#39;europe&#39;, &#39;japan&#39;], 12 markers=True, 13 errorbar=&#39;sd&#39;, 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle(&#39;Car Model Year vs Hourse Power by Origin&#39;, y=1."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://actuallyyao.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Line plot with Seaborn",
+      "item": "https://actuallyyao.github.io/posts/data-analysis/seaborn_1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Line plot with Seaborn",
+  "name": "Line plot with Seaborn",
+  "description": "Use Seaborn\u0026rsquo;s relplot() with hue, hue_order, style, markers parameters to fully customize the chart\n1sns.set_style(\u0026#39;darkgrid\u0026#39;) 2sns.set_palette(\u0026#39;deep\u0026#39;) 3sns.set_context(\u0026#39;paper\u0026#39;) 4 5g = sns.relplot(x=\u0026#39;model_year_full\u0026#39;, 6 y=\u0026#39;horsepower\u0026#39;, 7 data=car, 8 kind=\u0026#39;line\u0026#39;, 9 style=\u0026#39;origin\u0026#39;, 10 hue=\u0026#39;origin\u0026#39;, 11 hue_order=[\u0026#39;usa\u0026#39;, \u0026#39;europe\u0026#39;, \u0026#39;japan\u0026#39;], 12 markers=True, 13 errorbar=\u0026#39;sd\u0026#39;, 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle(\u0026#39;Car Model Year vs Hourse Power by Origin\u0026#39;, y=1.",
+  "keywords": [
+    "Data Visualization"
+  ],
+  "articleBody": "Use Seaborn’s relplot() with hue, hue_order, style, markers parameters to fully customize the chart\n1sns.set_style('darkgrid') 2sns.set_palette('deep') 3sns.set_context('paper') 4 5g = sns.relplot(x='model_year_full', 6 y='horsepower', 7 data=car, 8 kind='line', 9 style='origin', 10 hue='origin', 11 hue_order=['usa', 'europe', 'japan'], 12 markers=True, 13 errorbar='sd', 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle('Car Model Year vs Hourse Power by Origin', y=1.01, size=13) 27# sns.set(rc={'figure.figsize': (50, 20)}) 28 29plt.show() 30g.savefig('plot.png', dpi=300) 31 32sns.set_style('white') 33sns.set_palette('deep') ",
+  "wordCount" : "83",
+  "inLanguage": "en",
+  "datePublished": "2022-12-26T01:31:51+08:00",
+  "dateModified": "2022-12-26T01:31:51+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Yao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://actuallyyao.github.io/posts/data-analysis/seaborn_1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yao's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://actuallyyao.github.io/favicon/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://actuallyyao.github.io/" accesskey="h" title="Yao&#39;s World (Alt + H)">
+                <img src="https://actuallyyao.github.io/img/icon.png" alt="" aria-label="logo"
+                    height="30">Yao&#39;s World</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://actuallyyao.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.github.io/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://actuallyyao.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://actuallyyao.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Line plot with Seaborn
+    </h1>
+    <div class="post-meta"><span title='2022-12-26 01:31:51 +0800 CST'>2022-12-26</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;83 words&nbsp;·&nbsp;Yao
+
+</div>
+  </header> 
+  <div class="post-content"><p>Use Seaborn&rsquo;s relplot() with <code>hue</code>, <code>hue_order</code>, <code>style</code>, <code>markers</code> parameters to fully customize the chart</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;paper&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;model_year_full&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">                <span class="n">y</span><span class="o">=</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">                <span class="n">data</span><span class="o">=</span><span class="n">car</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">                <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">                <span class="n">style</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">                <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">                <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;europe&#39;</span><span class="p">,</span> <span class="s1">&#39;japan&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">                <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">                <span class="n">errorbar</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">                <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">                <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">                <span class="c1"># dashes=False</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                <span class="c1"># errorbar=True</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">                <span class="p">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span>  <span class="c1">#rotation=45, </span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="c1">#y=0.025</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="c1"># x=0.02</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Car Model Year vs Hourse Power by Origin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="c1"># sns.set(rc={&#39;figure.figsize&#39;: (50, 20)})</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="n">g</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><figure>
+    <font size="2.7" color="#808080"><center>
+    <img src="output.png" alt="">
+    <figcaption></figcaption>
+    </center></font>
+    </figure></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://actuallyyao.github.io/tags/data-visualization/">Data Visualization</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script>
+
+    let detail = document.getElementsByClassName('details')
+   
+    details = [].slice.call(detail);
+   
+    for (let index = 0; index < details.length; index++) {
+   
+    let element = details[index]
+   
+    const summary = element.getElementsByClassName('details-summary')[0];
+   
+    if (summary) {
+   
+    summary.addEventListener('click', () => {
+   
+    element.classList.toggle('open');
+   
+    }, false);
+   
+    }
+   
+    }
+   
+   </script>
+   
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

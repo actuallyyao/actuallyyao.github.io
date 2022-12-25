@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Data Analysis on Yao&#39;s blog</title>
-    <link>https://actuallyyao.github.io/posts/data-analysis/</link>
-    <description>Recent content in Data Analysis on Yao&#39;s blog</description>
+    <title>Data Visualization on Yao&#39;s blog</title>
+    <link>https://actuallyyao.github.io/tags/data-visualization/</link>
+    <description>Recent content in Data Visualization on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Dec 2022 01:31:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/posts/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 01:31:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Line plot with Seaborn</title>
       <link>https://actuallyyao.github.io/posts/data-analysis/seaborn_1/</link>

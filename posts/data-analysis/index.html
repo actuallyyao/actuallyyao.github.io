@@ -10,7 +10,7 @@
 <meta name="description" content="Data Analysis - Yao&#39;s blog">
 <meta name="author" content="Yao">
 <link rel="canonical" href="https://actuallyyao.github.io/posts/data-analysis/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.967d6543c1cbc2b52921b4e58249545eaa81d30170ce5c6ea484d2ee6c7cfa88.css" integrity="sha256-ln1lQ8HLwrUpIbTlgklUXqqB0wFwzlxupITS7mx8&#43;og=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9114e8c3f45e08387cc2bc83262b8662419a460a6bd41bce6e5a108408f3ae36.css" integrity="sha256-kRTow/ReCDh8wryDJiuGYkGaRgpr1BvObloQhAjzrjY=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://actuallyyao.github.io/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.github.io/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.github.io/favicon/favicon-32x32.png">
@@ -105,6 +105,19 @@
     Data Analysis
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Line plot with Seaborn
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Use Seaborn’s relplot() with hue, hue_order, style, markers parameters to fully customize the chart
+1sns.set_style(&#39;darkgrid&#39;) 2sns.set_palette(&#39;deep&#39;) 3sns.set_context(&#39;paper&#39;) 4 5g = sns.relplot(x=&#39;model_year_full&#39;, 6 y=&#39;horsepower&#39;, 7 data=car, 8 kind=&#39;line&#39;, 9 style=&#39;origin&#39;, 10 hue=&#39;origin&#39;, 11 hue_order=[&#39;usa&#39;, &#39;europe&#39;, &#39;japan&#39;], 12 markers=True, 13 errorbar=&#39;sd&#39;, 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle(&#39;Car Model Year vs Hourse Power by Origin&#39;, y=1....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-12-26 01:31:51 +0800 CST'>2022-12-26</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;83 words&nbsp;·&nbsp;Yao</footer>
+  <a class="entry-link" aria-label="post link to Line plot with Seaborn" href="https://actuallyyao.github.io/posts/data-analysis/seaborn_1/"></a>
+</article>
     </main>
     
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
