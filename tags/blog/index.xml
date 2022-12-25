@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog on Yao&#39;s blog</title>
+    <link>https://actuallyyao.github.io/tags/blog/</link>
+    <description>Recent content in Blog on Yao&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Dec 2022 00:29:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Hugo blog from scratch</title>
+      <link>https://actuallyyao.github.io/posts/tech/hugo_first/</link>
+      <pubDate>Mon, 26 Dec 2022 00:29:51 +0800</pubDate>
+      
+      <guid>https://actuallyyao.github.io/posts/tech/hugo_first/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

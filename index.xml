@@ -6,7 +6,16 @@
     <description>Recent content on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Dec 2022 19:27:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 00:29:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Hugo blog from scratch</title>
+      <link>https://actuallyyao.github.io/posts/tech/hugo_first/</link>
+      <pubDate>Mon, 26 Dec 2022 00:29:51 +0800</pubDate>
+      
+      <guid>https://actuallyyao.github.io/posts/tech/hugo_first/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Writing Practice I</title>
       <link>https://actuallyyao.github.io/posts/blog/writing_prac_1/</link>
@@ -27,7 +36,9 @@ Recycle Answer Throughout the decades, recycling rates for all the listed materi
       <guid>https://actuallyyao.github.io/about/</guid>
       <description>Of course, you want to check the About first!
 I&amp;rsquo;m Yao. I&amp;rsquo;m originally from Taiyuan and currently resides in Shanghai.
-我是姚，现居上海的太原人。 </description>
+我是姚，现居上海的太原人。
+Favorite channels:
+Thomas Flight All about cinema GeoWizard Geoguessr and more 稚嫩的魔法师 Eddie Woo Picked up many math from him </description>
     </item>
     
     

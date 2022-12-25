@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Dec 2022 19:27:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 00:29:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>https://actuallyyao.github.io/tags/blog/</link>
+      <pubDate>Mon, 26 Dec 2022 00:29:51 +0800</pubDate>
+      
+      <guid>https://actuallyyao.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Language</title>
       <link>https://actuallyyao.github.io/tags/language/</link>
