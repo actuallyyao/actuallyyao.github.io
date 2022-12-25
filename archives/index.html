@@ -10,7 +10,7 @@
 <meta name="description" content="archives">
 <meta name="author" content="Yao">
 <link rel="canonical" href="http://actuallyyao.github.io/archives/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a77a34bfd774efd057e9194b7b7216172b046bca6e60eb6fa46e62b12d78215c.css" integrity="sha256-p3o0v9d079BX6RlLe3IWFysEa8puYOtvpG5isS14IVw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da61804e7a3eca39c99135aee3aead744ddcb7f7f6d7285f8ccefd74b2c4371e.css" integrity="sha256-2mGATno&#43;yjnJkTWu466tdE3ct/f21yhfjM79dLLENx4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://actuallyyao.github.io/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://actuallyyao.github.io/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://actuallyyao.github.io/favicon/favicon-32x32.png">
@@ -141,7 +141,7 @@
       <div class="archive-entry">
         <h3 class="archive-entry-title">Writing Practice I
         </h3>
-        <div class="archive-meta"><span title='2022-12-23 19:27:51 +0800 CST'>2022-12-23</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;965 words&nbsp;·&nbsp;Yao</div>
+        <div class="archive-meta"><span title='2022-12-23 19:27:51 +0800 CST'>2022-12-23</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;966 words&nbsp;·&nbsp;Yao</div>
         <a class="entry-link" aria-label="post link to Writing Practice I" href="http://actuallyyao.github.io/posts/blog/writing_prac_1/"></a>
       </div>
     </div>
@@ -153,7 +153,32 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+
+    let detail = document.getElementsByClassName('details')
+   
+    details = [].slice.call(detail);
+   
+    for (let index = 0; index < details.length; index++) {
+   
+    let element = details[index]
+   
+    const summary = element.getElementsByClassName('details-summary')[0];
+   
+    if (summary) {
+   
+    summary.addEventListener('click', () => {
+   
+    element.classList.toggle('open');
+   
+    }, false);
+   
+    }
+   
+    }
+   
+   </script>
+   
 
 <script>
     let menu = document.getElementById('menu')

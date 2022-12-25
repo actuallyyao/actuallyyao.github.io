@@ -10,7 +10,7 @@
 <meta name="description" content="search">
 <meta name="author" content="Yao">
 <link rel="canonical" href="http://actuallyyao.github.io/search/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a77a34bfd774efd057e9194b7b7216172b046bca6e60eb6fa46e62b12d78215c.css" integrity="sha256-p3o0v9d079BX6RlLe3IWFysEa8puYOtvpG5isS14IVw=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da61804e7a3eca39c99135aee3aead744ddcb7f7f6d7285f8ccefd74b2c4371e.css" integrity="sha256-2mGATno&#43;yjnJkTWu466tdE3ct/f21yhfjM79dLLENx4=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
 <script defer crossorigin="anonymous" src="/assets/js/search.7e97bedbca50c8ca89f1dcab5ea7115989851210c635903ebbb8327ae08c519e.js" integrity="sha256-fpe&#43;28pQyMqJ8dyrXqcRWYmFEhDGNZA&#43;u7gyeuCMUZ4="></script>
 <link rel="icon" href="http://actuallyyao.github.io/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://actuallyyao.github.io/favicon/favicon-16x16.png">
@@ -151,7 +151,32 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+
+    let detail = document.getElementsByClassName('details')
+   
+    details = [].slice.call(detail);
+   
+    for (let index = 0; index < details.length; index++) {
+   
+    let element = details[index]
+   
+    const summary = element.getElementsByClassName('details-summary')[0];
+   
+    if (summary) {
+   
+    summary.addEventListener('click', () => {
+   
+    element.classList.toggle('open');
+   
+    }, false);
+   
+    }
+   
+    }
+   
+   </script>
+   
 
 <script>
     let menu = document.getElementById('menu')
