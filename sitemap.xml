@@ -44,8 +44,14 @@
   </url><url>
     <loc>https://actuallyyao.com/categories/</loc>
   </url><url>
+    <loc>https://actuallyyao.com/tags/data/</loc>
+  </url><url>
+    <loc>https://actuallyyao.com/tags/python/</loc>
+  </url><url>
     <loc>https://actuallyyao.com/search/</loc>
   </url><url>
     <loc>https://actuallyyao.com/tags/</loc>
+  </url><url>
+    <loc>https://actuallyyao.com/posts/data/learn_data/</loc>
   </url>
 </urlset>

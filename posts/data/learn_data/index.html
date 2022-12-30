@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>我是如何学习数据分析的 | Yao&#39;s blog</title>
+<meta name="keywords" content="Python, Data">
+<meta name="description" content="2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。
+随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测Tableau看板advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。
+SQL 第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。
+直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是W3Cschool），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。
+来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。
+DataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. 这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为SQL Fundamentals的Skill Track。
+我们先来看看这个Track的介绍：
+Gain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.
+In this track, you&rsquo;ll learn the skills you need to level up your data skills and leave Excel behind you.">
+<meta name="author" content="Yao">
+<link rel="canonical" href="https://actuallyyao.com/posts/data/learn_data/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ab632e7a612ad631448379727bc358a59b2b244e3f3f077a930148b1824b8d2f.css" integrity="sha256-q2MuemEq1jFEg3lye8NYpZsrJE4/Pwd6kwFIsYJLjS8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://actuallyyao.com/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.com/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.com/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://actuallyyao.com/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="https://actuallyyao.com/favicon/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="我是如何学习数据分析的" />
+<meta property="og:description" content="2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。
+随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测Tableau看板advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。
+SQL 第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。
+直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是W3Cschool），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。
+来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。
+DataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. 这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为SQL Fundamentals的Skill Track。
+我们先来看看这个Track的介绍：
+Gain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.
+In this track, you&rsquo;ll learn the skills you need to level up your data skills and leave Excel behind you." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actuallyyao.com/posts/data/learn_data/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="我是如何学习数据分析的"/>
+<meta name="twitter:description" content="2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。
+随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测Tableau看板advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。
+SQL 第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。
+直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是W3Cschool），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。
+来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。
+DataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. 这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为SQL Fundamentals的Skill Track。
+我们先来看看这个Track的介绍：
+Gain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.
+In this track, you&rsquo;ll learn the skills you need to level up your data skills and leave Excel behind you."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://actuallyyao.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Data Analysis",
+      "item": "https://actuallyyao.com/posts/data/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "我是如何学习数据分析的",
+      "item": "https://actuallyyao.com/posts/data/learn_data/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "我是如何学习数据分析的",
+  "name": "我是如何学习数据分析的",
+  "description": "2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。\n随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测Tableau看板advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。\nSQL 第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。\n直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是W3Cschool），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。\n来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。\nDataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. 这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为SQL Fundamentals的Skill Track。\n我们先来看看这个Track的介绍：\nGain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.\nIn this track, you\u0026rsquo;ll learn the skills you need to level up your data skills and leave Excel behind you.",
+  "keywords": [
+    "Python", "Data"
+  ],
+  "articleBody": "2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。\n随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测Tableau看板advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。\nSQL 第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。\n直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是W3Cschool），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。\n来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。\nDataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. 这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为SQL Fundamentals的Skill Track。\n我们先来看看这个Track的介绍：\nGain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.\nIn this track, you’ll learn the skills you need to level up your data skills and leave Excel behind you. Through hands-on exercises, you’ll discover how to quickly summarize, join tables, and use window functions and built-in PostgreSQL functions to analyze your data.\n从介绍可知，这个Track主要针对SQL零基础入门，从包含课程也可以看到，基本囊括了一个SQL新手需要学习的所有SQL知识（不过课程使用的PostgreSQL，我实际工作中用到的是hiveSQL，所以会发现一些进阶的函数两者不匹配，不过相似度还是很高的）：\nIntermediate SQL Queries SQL for Joining Data Data Manipulation in SQL Functions for Manipulating Date in PostgreSQL Python ",
+  "wordCount" : "121",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Yao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://actuallyyao.com/posts/data/learn_data/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yao's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://actuallyyao.com/favicon/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://actuallyyao.com/" accesskey="h" title="Yao&#39;s World (Alt + H)">
+                <img src="https://actuallyyao.com/img/icon.png" alt="" aria-label="logo"
+                    height="30">Yao&#39;s World</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://actuallyyao.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://actuallyyao.com/">Home</a>&nbsp;»&nbsp;<a href="https://actuallyyao.com/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://actuallyyao.com/posts/data/">Data Analysis</a></div>
+    <h1 class="post-title">
+      我是如何学习数据分析的
+    </h1>
+    <div class="post-meta">1 min&nbsp;·&nbsp;121 words&nbsp;·&nbsp;Yao
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#sql" aria-label="SQL">SQL</a></li>
+                    <li>
+                        <a href="#python" aria-label="Python">Python</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+  <div class="post-content"><p>2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。</p>
+<p>随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测<abbr title="Tableau约在2020年被前司淘汰，转而使用自研的BI平台">Tableau看板</abbr>advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。</p>
+<h3 id="sql">SQL<a hidden class="anchor" aria-hidden="true" href="#sql">#</a></h3>
+<p>第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。</p>
+<p>直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是<a href="https://www.w3cschool.cn/sql/">W3Cschool</a>），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。</p>
+<p>来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。</p>
+<a target="_blank" href=https://www.youtube.com/@ThomasFlight title=DataCamp class="friendurl">
+  <div class="frienddiv">
+    <div class="frienddivleft">
+      <img class="myfriend" src=https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/hq30ze9287y9ztkmcdhy />
+    </div>
+    <div class="frienddivright">
+      <div class="friendname">DataCamp</div>
+      <div class="friendinfo">DataCamp offers interactive R, Python, Sheets, SQL and shell courses.</div>
+    </div>
+  </div>
+</a>
+
+<p>这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为<a href="https://app.datacamp.com/learn/skill-tracks/sql-fundamentals?version=2">SQL Fundamentals</a>的Skill Track。</p>
+<p>我们先来看看这个Track的介绍：</p>
+<blockquote>
+<p>Gain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.</p>
+<p>In this track, you&rsquo;ll learn the skills you need to level up your data skills and leave Excel behind you. Through hands-on exercises, you’ll discover how to quickly summarize, join tables, and use window functions and built-in PostgreSQL functions to analyze your data.</p>
+</blockquote>
+<p>从介绍可知，这个Track主要针对SQL零基础入门，从包含课程也可以看到，基本囊括了一个SQL新手需要学习的所有SQL知识（不过课程使用的PostgreSQL，我实际工作中用到的是hiveSQL，所以会发现一些进阶的函数两者不匹配，不过相似度还是很高的）：</p>
+<ul>
+<li>Intermediate SQL Queries</li>
+<li>SQL for Joining Data</li>
+<li>Data Manipulation in SQL</li>
+<li>Functions for Manipulating Date in PostgreSQL</li>
+</ul>
+<h3 id="python">Python<a hidden class="anchor" aria-hidden="true" href="#python">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://actuallyyao.com/tags/python/">Python</a></li>
+      <li><a href="https://actuallyyao.com/tags/data/">Data</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script>
+
+    let detail = document.getElementsByClassName('details')
+   
+    details = [].slice.call(detail);
+   
+    for (let index = 0; index < details.length; index++) {
+   
+    let element = details[index]
+   
+    const summary = element.getElementsByClassName('details-summary')[0];
+   
+    if (summary) {
+   
+    summary.addEventListener('click', () => {
+   
+    element.classList.toggle('open');
+   
+    }, false);
+   
+    }
+   
+    }
+   
+   </script>
+   
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
