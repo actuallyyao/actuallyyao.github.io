@@ -87,13 +87,27 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Useful SQL
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
+1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16	FROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision
+1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &#39;all&#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：...</p>
+  </div>
+  <footer class="entry-footer">1 min&nbsp;·&nbsp;115 words&nbsp;·&nbsp;Yao</footer>
+  <a class="entry-link" aria-label="post link to Useful SQL" href="https://actuallyyao.com/posts/data/sql_save/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>我是如何学习数据分析的
     </h2>
   </header>
   <div class="entry-content">
     <p>2019年毕业进入互联网行业，虽然不是技术岗位，但日常的工作离不开数据。
 随着工作年限的提升，工作对我数据能力的要求也在迅速上升。从一开始使用公司内部的BI平台做数据查询、日常观测Tableau看板advanced level的SQL，可以用pandas和matplotlib做intermediate level的数据分析和可视化。这条路上，还是有一些感触，下面做粗略的介绍。
-SQL 第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。
+第一次接触SQL已经是工作之后，那时看到数据分析师的电脑屏幕上总是密密麻麻的代码，不仅觉得无比高端，同时也觉得与自己无关。
 直到项目上需要取数DA排期排不上，才第一次想，需求也不复杂，要不自己试试。于是一边网上看教程（这里主要是W3Cschool），一边看着之前DA给写过的SQL照猫画虎，终于写成了自己的第一个SQL。原本觉得和自己无关的代码，突然可以自己写出来，还是很激动的，并且也并不觉得很难。从此，我便能自己写就自己写，不知不觉节省了不少等排期的功夫。
 来到2021年，我逐渐觉得自己的SQL能力遇到了瓶颈，于是想找一找网课做系统性的学习。这里不记得如何找到了DataCamp，它也是这篇博客的主角。
 DataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. 这里不得不提DataCamp的Tracks。网站针对你想要学习到的技能（Skill Tracks），或成为的角色（Career Tracks），把需要学习的课程按照一定顺序排列起来组成Tracks，交给你一步一步学，实质其实就是课程的list。当时的我想要系统学习SQL，便enroll了名为SQL Fundamentals的Skill Track。
@@ -101,7 +115,7 @@ DataCamp DataCamp offers interactive R, Python, Sheets, SQL and shell courses. �
 Gain the fundamental skills you need to interact with and query your data in SQL—a powerful language used by data-driven businesses large and small to explore and manipulate their data to extract meaningful insights.
 In this track, you’ll learn the skills you need to level up your data skills and leave Excel behind you....</p>
   </div>
-  <footer class="entry-footer">1 min&nbsp;·&nbsp;121 words&nbsp;·&nbsp;Yao</footer>
+  <footer class="entry-footer">1 min&nbsp;·&nbsp;119 words&nbsp;·&nbsp;Yao</footer>
   <a class="entry-link" aria-label="post link to 我是如何学习数据分析的" href="https://actuallyyao.com/posts/data/learn_data/"></a>
 </article>
     </main>

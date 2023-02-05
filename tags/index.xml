@@ -5,32 +5,13 @@
     <link>https://actuallyyao.com/tags/</link>
     <description>Recent content in Tags on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 26 Dec 2022 01:31:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Data Visualization</title>
-      <link>https://actuallyyao.com/tags/data-visualization/</link>
-      <pubDate>Mon, 26 Dec 2022 01:31:51 +0800</pubDate>
-      
-      <guid>https://actuallyyao.com/tags/data-visualization/</guid>
-      <description></description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://actuallyyao.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
       <link>https://actuallyyao.com/tags/blog/</link>
-      <pubDate>Mon, 26 Dec 2022 00:29:51 +0800</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://actuallyyao.com/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Language</title>
-      <link>https://actuallyyao.com/tags/language/</link>
-      <pubDate>Fri, 23 Dec 2022 19:27:51 +0800</pubDate>
-      
-      <guid>https://actuallyyao.com/tags/language/</guid>
       <description></description>
     </item>
     
@@ -44,11 +25,29 @@
     </item>
     
     <item>
+      <title>Language</title>
+      <link>https://actuallyyao.com/tags/language/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://actuallyyao.com/tags/language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>https://actuallyyao.com/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://actuallyyao.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://actuallyyao.com/tags/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://actuallyyao.com/tags/sql/</guid>
       <description></description>
     </item>
     

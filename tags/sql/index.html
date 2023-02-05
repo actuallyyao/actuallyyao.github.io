@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Data Visualization | Yao&#39;s blog</title>
+<title>SQL | Yao&#39;s blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="Yao">
-<link rel="canonical" href="https://actuallyyao.com/tags/data-visualization/">
+<link rel="canonical" href="https://actuallyyao.com/tags/sql/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.ab632e7a612ad631448379727bc358a59b2b244e3f3f077a930148b1824b8d2f.css" integrity="sha256-q2MuemEq1jFEg3lye8NYpZsrJE4/Pwd6kwFIsYJLjS8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://actuallyyao.com/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.com/favicon/favicon-16x16.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://actuallyyao.com/favicon/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://actuallyyao.com/tags/data-visualization/index.xml">
+<link rel="alternate" type="application/rss+xml" href="https://actuallyyao.com/tags/sql/index.xml">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,13 +27,13 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Data Visualization" />
+</noscript><meta property="og:title" content="SQL" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://actuallyyao.com/tags/data-visualization/" />
+<meta property="og:url" content="https://actuallyyao.com/tags/sql/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Data Visualization"/>
+<meta name="twitter:title" content="SQL"/>
 <meta name="twitter:description" content=""/>
 
 </head>
@@ -81,21 +81,22 @@
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://actuallyyao.com/">Home</a>&nbsp;»&nbsp;<a href="https://actuallyyao.com/tags/">Tags</a></div>
   <h1>
-    Data Visualization
+    SQL
   </h1>
 </header>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Line plot with Seaborn
+    <h2>Useful SQL
     </h2>
   </header>
   <div class="entry-content">
-    <p>Use Seaborn’s .relplot() with hue, hue_order, style, markers parameters to fully customize the chart
-1sns.set_style(&#39;darkgrid&#39;) 2sns.set_palette(&#39;deep&#39;) 3sns.set_context(&#39;paper&#39;) 4 5g = sns.relplot(x=&#39;model_year_full&#39;, 6 y=&#39;horsepower&#39;, 7 data=car, 8 kind=&#39;line&#39;, 9 style=&#39;origin&#39;, 10 hue=&#39;origin&#39;, 11 hue_order=[&#39;usa&#39;, &#39;europe&#39;, &#39;japan&#39;], 12 markers=True, 13 errorbar=&#39;sd&#39;, 14 height=5, 15 aspect=1.5 16 # dashes=False 17 # errorbar=True 18 ) 19 20plt.xticks( #rotation=45, 21 #y=0.025 22) 23plt.yticks( 24 # x=0.02 25) 26g.fig.suptitle(&#39;Car Model Year vs Hourse Power by Origin&#39;, y=1....</p>
+    <p>Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
+1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16	FROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision
+1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &#39;all&#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-12-26 01:31:51 +0800 CST'>2022-12-26</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;84 words&nbsp;·&nbsp;Yao</footer>
-  <a class="entry-link" aria-label="post link to Line plot with Seaborn" href="https://actuallyyao.com/posts/data/seaborn_1/"></a>
+  <footer class="entry-footer">1 min&nbsp;·&nbsp;115 words&nbsp;·&nbsp;Yao</footer>
+  <a class="entry-link" aria-label="post link to Useful SQL" href="https://actuallyyao.com/posts/data/sql_save/"></a>
 </article>
     </main>
     

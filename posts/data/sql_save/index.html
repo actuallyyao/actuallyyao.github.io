@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Useful SQL | Yao&#39;s blog</title>
+<meta name="keywords" content="SQL, Data">
+<meta name="description" content="Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
+1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16	FROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision
+1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &#39;all&#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：">
+<meta name="author" content="Yao">
+<link rel="canonical" href="https://actuallyyao.com/posts/data/sql_save/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ab632e7a612ad631448379727bc358a59b2b244e3f3f077a930148b1824b8d2f.css" integrity="sha256-q2MuemEq1jFEg3lye8NYpZsrJE4/Pwd6kwFIsYJLjS8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://actuallyyao.com/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.com/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.com/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://actuallyyao.com/favicon/apple-touch-icon.png">
+<link rel="mask-icon" href="https://actuallyyao.com/favicon/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Useful SQL" />
+<meta property="og:description" content="Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
+1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16	FROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision
+1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &#39;all&#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://actuallyyao.com/posts/data/sql_save/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Useful SQL"/>
+<meta name="twitter:description" content="Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
+1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16	FROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision
+1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &#39;all&#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数："/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://actuallyyao.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Data Analysis",
+      "item": "https://actuallyyao.com/posts/data/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Useful SQL",
+      "item": "https://actuallyyao.com/posts/data/sql_save/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Useful SQL",
+  "name": "Useful SQL",
+  "description": "Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因\n1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16\tFROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision\n1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select \u0026#39;all\u0026#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：",
+  "keywords": [
+    "SQL", "Data"
+  ],
+  "articleBody": "Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因\n1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16\tFROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision\n1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select 'all' as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：\nsort_array(Array a) 根据数组元素的自然顺序按升序对输入数组排序并返回它\nselect sort_array(collect_set(col))\n",
+  "wordCount" : "115",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Yao"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://actuallyyao.com/posts/data/sql_save/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yao's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://actuallyyao.com/favicon/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://actuallyyao.com/" accesskey="h" title="Yao&#39;s World (Alt + H)">
+                <img src="https://actuallyyao.com/img/icon.png" alt="" aria-label="logo"
+                    height="30">Yao&#39;s World</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://actuallyyao.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://actuallyyao.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://actuallyyao.com/">Home</a>&nbsp;»&nbsp;<a href="https://actuallyyao.com/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://actuallyyao.com/posts/data/">Data Analysis</a></div>
+    <h1 class="post-title">
+      Useful SQL
+    </h1>
+    <div class="post-meta">1 min&nbsp;·&nbsp;115 words&nbsp;·&nbsp;Yao
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#window-function" aria-label="Window Function">Window Function</a></li>
+                    <li>
+                        <a href="#wr-a-sampling" aria-label="WR-A Sampling">WR-A Sampling</a></li>
+                    <li>
+                        <a href="#collect_set-and-sort_array" aria-label="COLLECT_SET and SORT_ARRAY">COLLECT_SET and SORT_ARRAY</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+  <div class="post-content"><h3 id="window-function">Window Function<a hidden class="anchor" aria-hidden="true" href="#window-function">#</a></h3>
+<p>先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">            </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">report_cnt_range</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w">            </span><span class="n">report_reason_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">            </span><span class="n">report_cnt</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">            </span><span class="n">ROW_NUMBER</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">                </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">report_cnt_range</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">                </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">                    </span><span class="n">report_cnt</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">rank</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">        </span><span class="k">FROM</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">            </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">                </span><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w">                    </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">user_range</span><span class="p">.</span><span class="n">report_cnt_range</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">report_cnt_range</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w">                    </span><span class="n">report_detail</span><span class="p">.</span><span class="n">report_reason_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">report_reason_name</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w">                    </span><span class="k">COUNT</span><span class="w"> </span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">report_detail</span><span class="p">.</span><span class="n">object_id</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">report_cnt</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w">								</span><span class="k">FROM</span><span class="w"> </span><span class="n">XXX</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> 
+</span></span></span></code></pre></div><h3 id="wr-a-sampling">WR-A Sampling<a hidden class="anchor" aria-hidden="true" href="#wr-a-sampling">#</a></h3>
+<p>Use log to retain precision</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">room_id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w"></span><span class="n">log</span><span class="p">(</span><span class="n">rand</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">vv</span><span class="o">/</span><span class="n">vv_all</span><span class="p">))</span><span class="k">as</span><span class="w"> </span><span class="k">key</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> 
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">room_id</span><span class="p">,</span><span class="w"> </span><span class="n">vv</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">type</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">all_vv</span><span class="p">,</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">rand</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> 
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="s1">&#39;all&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">room_id</span><span class="p">,</span><span class="w"> </span><span class="n">vv</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">room_id_vv</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">desc</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span></span></span></code></pre></div><h3 id="collect_set-and-sort_array">COLLECT_SET and SORT_ARRAY<a hidden class="anchor" aria-hidden="true" href="#collect_set-and-sort_array">#</a></h3>
+<p>如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：</p>
+<p><code>sort_array(Array&lt;T&gt; a)</code> 根据数组元素的自然顺序按升序对输入数组排序并返回它</p>
+<p><code>select sort_array(collect_set(col))</code></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://actuallyyao.com/tags/sql/">SQL</a></li>
+      <li><a href="https://actuallyyao.com/tags/data/">Data</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script>
+
+    let detail = document.getElementsByClassName('details')
+   
+    details = [].slice.call(detail);
+   
+    for (let index = 0; index < details.length; index++) {
+   
+    let element = details[index]
+   
+    const summary = element.getElementsByClassName('details-summary')[0];
+   
+    if (summary) {
+   
+    summary.addEventListener('click', () => {
+   
+    element.classList.toggle('open');
+   
+    }, false);
+   
+    }
+   
+    }
+   
+   </script>
+   
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
