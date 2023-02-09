@@ -47,7 +47,7 @@ Thomas Flight All about cinema GeoWizard Geoguessr and more 稚嫩的魔法师 P
       <guid>https://actuallyyao.com/posts/data/sql_save/</guid>
       <description>Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
 1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10 FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16	FROM XXX ) 17WHERE rank = 1 WR-A Sampling Use log to retain precision
-1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &amp;#39;all&amp;#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数：</description>
+1select room_id, 2log(rand)*(1/(vv/vv_all))as key 3from 4( 5select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand 6from 7( 8select &amp;#39;all&amp;#39; as type, room_id, vv 9from room_id_vv 10) 11) 12order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要 array 中的元素保持一定的顺序，可以使用 sort_array 函数来实现：</description>
     </item>
     
     <item>
