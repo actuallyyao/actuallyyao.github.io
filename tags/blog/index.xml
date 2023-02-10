@@ -5,11 +5,12 @@
     <link>https://actuallyyao.com/tags/blog/</link>
     <description>Recent content in Blog on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://actuallyyao.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Dec 2022 00:29:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Hugo blog from scratch</title>
       <link>https://actuallyyao.com/posts/tech/hugo_first/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:29:51 +0800</pubDate>
       
       <guid>https://actuallyyao.com/posts/tech/hugo_first/</guid>
       <description></description>
