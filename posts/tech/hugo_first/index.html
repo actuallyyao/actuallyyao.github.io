@@ -161,6 +161,27 @@
       <li><a href="https://actuallyyao.com/tags/blog/">Blog</a></li>
     </ul>
   </footer>
+  
+  <br /><br /> 
+  
+<div>
+    <div class="pagination__title">
+        <span class="pagination__title-h" style="font-size: 20px;">Comments</span>
+        <hr />
+    </div>
+    <div id="tcomment"></div>
+    <script src="https://cdn.staticfile.org/twikoo/1.6.9/twikoo.all.min.js"></script>
+    <script>
+        twikoo.init({
+            envId: "https://twikoo-api-wheat-kappa.vercel.app/",  
+            el: "#tcomment",
+            lang: 'EN',
+            region: 'ap-shanghai',  
+            path: window.TWIKOO_MAGIC_PATH||window.location.pathname,
+        });
+    </script>
+</div>
+
 </article>
     </main>
     
