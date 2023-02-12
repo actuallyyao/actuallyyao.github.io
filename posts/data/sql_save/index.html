@@ -12,7 +12,7 @@
 1select 2 room_id, 3 log(rand) *(1 /(vv / vv_all)) as key 4from 5 ( 6 select 7 type, 8 room_id, 9 vv, 10 sum(vv) over(partition by type) as all_vv, 11 rand() as rand 12 from 13 ( 14 select 15 &#39;all&#39; as type, 16 room_id, 17 vv 18 from 19 room_id_vv 20 ) 21 ) 22order by 23 key desc 24limit 25 100 COLLECT_SET and SORT_ARRAY 如果需要array中的元素保持一定的顺序，可以使用sort_array函数来实现的：">
 <meta name="author" content="Yao">
 <link rel="canonical" href="https://actuallyyao.com/posts/data/sql_save/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f2a5dbed961b5cd1ec8a675e3a514c8f5457060fa3c4a9a857ec1cf64ddbd8df.css" integrity="sha256-8qXb7ZYbXNHsimdeOlFMj1RXBg&#43;jxKmoV&#43;wc9k3b2N8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bbf1e0494cb35b58651970ceee5c24fc3cd2c253b3a013c39afe9bb7c7c9f470.css" integrity="sha256-u/HgSUyzW1hlGXDO7lwk/DzSwlOzoBPDmv6bt8fJ9HA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://actuallyyao.com/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.com/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.com/favicon/favicon-32x32.png">
