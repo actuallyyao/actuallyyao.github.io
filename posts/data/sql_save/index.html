@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Useful SQL | Yao&#39;s blog</title>
+<title>Useful SQL | Yao&#39;s World</title>
 <meta name="keywords" content="SQL, Data">
 <meta name="description" content="Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
 1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16 FROM 17 XXX 18 ) 19WHERE 20 rank = 1 WR-A Sampling Use log to retain precision
@@ -95,7 +95,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Yao's blog",
+    "name": "Yao's World",
     "logo": {
       "@type": "ImageObject",
       "url": "https://actuallyyao.com/favicon/favicon.ico"
