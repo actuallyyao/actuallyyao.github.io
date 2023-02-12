@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Blog on Yao&#39;s blog</title>
-    <link>https://actuallyyao.com/posts/blog/</link>
-    <description>Recent content in Blog on Yao&#39;s blog</description>
+    <title>Life on Yao&#39;s blog</title>
+    <link>https://actuallyyao.com/tags/life/</link>
+    <description>Recent content in Life on Yao&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Feb 2023 12:13:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.com/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Feb 2023 12:13:51 +0800</lastBuildDate><atom:link href="https://actuallyyao.com/tags/life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>琵琶行</title>
       <link>https://actuallyyao.com/posts/blog/cnfont_test/</link>
@@ -63,18 +63,6 @@
 感我此言良久立，却坐促弦弦转急。
 凄凄不似向前声，满座重闻皆掩泣。
 座中泣下谁最多？江州司马青衫湿。</description>
-    </item>
-    
-    <item>
-      <title>Writing Practice I</title>
-      <link>https://actuallyyao.com/posts/blog/writing_prac_1/</link>
-      <pubDate>Fri, 23 Dec 2022 19:27:51 +0800</pubDate>
-      
-      <guid>https://actuallyyao.com/posts/blog/writing_prac_1/</guid>
-      <description>Task 1 Prompt The graph below shows the proportion of four different materials that were recycled from 1982 to 2010 in a particular country.
-Summarize the information by selecting and reporting the main features, and make comparisons where relevant.
-Write at least 150 words.
-Answer Throughout the decades, recycling rates for all the listed materials have been increasing in this country. To the citizens, this should be a good thing. However, there are some additional points worth noting.</description>
     </item>
     
   </channel>
