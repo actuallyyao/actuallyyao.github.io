@@ -7,10 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>Data | Yao&#39;s World</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="Actually Yao&#39;s personal blog where I share my thoughts and life">
 <meta name="author" content="Yao">
 <link rel="canonical" href="https://actuallyyao.com/tags/data/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.928b9b82324b9f703e96f994735f43f61665de5fba953818a798fbcce8e0e5f5.css" integrity="sha256-koubgjJLn3A&#43;lvmUc19D9hZl3l&#43;6lTgYp5j7zOjg5fU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7edd8349eb63e6c61768afb87c223e1725cda7c4d819ac9f5a008c36405f651f.css" integrity="sha256-ft2DSetj5sYXaK&#43;4fCI&#43;FyXNp8TYGayfWgCMNkBfZR8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://actuallyyao.com/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.com/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.com/favicon/favicon-32x32.png">
@@ -28,13 +28,13 @@
 
     </style>
 </noscript><meta property="og:title" content="Data" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Actually Yao&#39;s personal blog where I share my thoughts and life" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://actuallyyao.com/tags/data/" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Actually Yao&#39;s personal blog where I share my thoughts and life"/>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -156,10 +156,9 @@ In this track, you’ll learn the skills you need to level up your data skills a
   </header>
   <div class="entry-content">
     <p>Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因
-1SELECT 2 DISTINCT report_cnt_range, 3 report_reason_name, 4 report_cnt, 5 ROW_NUMBER () OVER ( 6 PARTITION BY report_cnt_range 7 ORDER BY 8 report_cnt 9 ) as rank 10FROM 11 ( 12 SELECT 13 DISTINCT user_range.report_cnt_range as report_cnt_range, 14 report_detail.report_reason_name as report_reason_name, 15 COUNT (DISTINCT report_detail.object_id) as report_cnt 16 FROM 17 XXX 18 ) 19WHERE 20 rank = 1 WR-A Sampling Use log to retain precision
-1select 2 room_id, 3 log(rand) *(1 /(vv / vv_all)) as key 4from 5 ( 6 select 7 type, 8 room_id, 9 vv, 10 sum(vv) over(partition by type) as all_vv, 11 rand() as rand 12 from 13 ( 14 select 15 &#39;all&#39; as type, 16 room_id, 17 vv 18 from 19 room_id_vv 20 ) 21 ) 22order by 23 key desc 24limit 25 100 COLLECT_SET and SORT_ARRAY 如果需要array中的元素保持一定的顺序，可以使用sort_array函数来实现的：...</p>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 SELECT DISTINCT report_cnt_range, report_reason_name, report_cnt, ROW_NUMBER () OVER ( PARTITION BY report_cnt_range ORDER BY report_cnt ) as rank FROM ( SELECT DISTINCT user_range.report_cnt_range as report_cnt_range, report_detail.report_reason_name as report_reason_name, COUNT (DISTINCT report_detail.object_id) as report_cnt FROM XXX ) WHERE rank = 1 WR-A Sampling Use log to retain precision...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-14 21:44:51 +0800 CST'>2022-10-14</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;139 words&nbsp;·&nbsp;Yao</footer>
+  <footer class="entry-footer"><span title='2022-10-14 21:44:51 +0800 CST'>2022-10-14</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;146 words&nbsp;·&nbsp;Yao</footer>
   <a class="entry-link" aria-label="post link to Useful SQL" href="https://actuallyyao.com/posts/data/sql_save/"></a>
 </article>
     </main>
