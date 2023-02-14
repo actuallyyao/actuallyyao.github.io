@@ -77,7 +77,7 @@
   "keywords": [
     "SQL", "Data"
   ],
-  "articleBody": "Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 SELECT DISTINCT report_cnt_range, report_reason_name, report_cnt, ROW_NUMBER () OVER ( PARTITION BY report_cnt_range ORDER BY report_cnt ) as rank FROM ( SELECT DISTINCT user_range.report_cnt_range as report_cnt_range, report_detail.report_reason_name as report_reason_name, COUNT (DISTINCT report_detail.object_id) as report_cnt FROM XXX ) WHERE rank = 1 WR-A Sampling Use log to retain precision\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 select room_id, log(rand) *(1 /(vv / vv_all)) as key from ( select type, room_id, vv, sum(vv) over(partition by type) as all_vv, rand() as rand from ( select 'all' as type, room_id, vv from room_id_vv ) ) order by key desc limit 100 COLLECT_SET and SORT_ARRAY 如果需要array中的元素保持一定的顺序，可以使用sort_array函数来实现的：\nsort_array(Array a) 根据数组元素的自然顺序按升序对输入数组排序并返回它\nselect sort_array(collect_set(col))\n",
+  "articleBody": "Window Function 先分举报量分层取各个举报原因对应的举报次数，然后通过开窗函数取每个举报量分层中举报次数排第一的举报原因\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 SELECT DISTINCT report_cnt_range, report_reason_name, report_cnt, ROW_NUMBER () OVER ( PARTITION BY report_cnt_range ORDER BY report_cnt ) as rank FROM ( SELECT DISTINCT user_range.report_cnt_range as report_cnt_range, report_detail.report_reason_name as report_reason_name, COUNT (DISTINCT report_detail.object_id) as report_cnt FROM XXX ) WHERE rank = 1 WR-A Sampling Use log to retain precision\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 SELECT room_id, log(rand) *(1 /(vv / vv_all)) AS key FROM ( SELECT type, room_id, vv, sum(vv) OVER(partition by type) AS all_vv, rand() AS rand FROM ( SELECT 'all' AS type, room_id, vv FROM room_id_vv ) ) ORDER BY key DESC LIMIT 100 COLLECT_SET and SORT_ARRAY 如果需要array中的元素保持一定的顺序，可以使用sort_array函数来实现的：\nsort_array(Array a) 根据数组元素的自然顺序按升序对输入数组排序并返回它\nselect sort_array(collect_set(col))\n",
   "wordCount" : "146",
   "inLanguage": "en",
   "datePublished": "2022-10-14T21:44:51+08:00",
@@ -355,30 +355,30 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">room_id</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">log</span><span class="p">(</span><span class="n">rand</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="p">(</span><span class="n">vv</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">vv_all</span><span class="p">))</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">key</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">log</span><span class="p">(</span><span class="n">rand</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="p">(</span><span class="n">vv</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">vv_all</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">key</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">select</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">SELECT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">type</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">room_id</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">vv</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">sum</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">type</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">all_vv</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">rand</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">from</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">sum</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">type</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">all_vv</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rand</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">FROM</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">select</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="s1">&#39;all&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="s1">&#39;all&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">type</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">room_id</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">vv</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">from</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">FROM</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">room_id_vv</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">key</span><span class="w"> </span><span class="k">desc</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">limit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">key</span><span class="w"> </span><span class="k">DESC</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LIMIT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="mi">100</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
