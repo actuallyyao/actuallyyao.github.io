@@ -10,7 +10,7 @@
 <meta name="description" content="Actually Yao&#39;s personal blog where I share my thoughts and life">
 <meta name="author" content="Yao">
 <link rel="canonical" href="https://actuallyyao.com/tags/sql/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.09114791bd6387178293532a582a28a66b1cbbf694954ee35e4bd4dc8f6d3799.css" integrity="sha256-CRFHkb1jhxeCk1MqWCoopmscu/aUlU7jXkvU3I9tN5k=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9647a18fbccbe2236572c33e64250640c884862bb2bd4a4d9cf495316ebaa3cf.css" integrity="sha256-lkehj7zL4iNlcsM&#43;ZCUGQMiEhiuyvUpNnPSVMW66o88=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://actuallyyao.com/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://actuallyyao.com/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://actuallyyao.com/favicon/favicon-32x32.png">
@@ -36,27 +36,7 @@
 <meta name="twitter:title" content="SQL"/>
 <meta name="twitter:description" content="Actually Yao&#39;s personal blog where I share my thoughts and life"/>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
-
-
 <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
-
-
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,38 +46,20 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&family=Nunito+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-
-
-
-
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans&display=swap" rel="stylesheet">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/b8c0f0d05c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="list dark" id="top">
+<body class="list dark" id="top"><head>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet">
+</head>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -106,6 +68,26 @@
                 <img src="https://actuallyyao.com/img/icon.png" alt="" aria-label="logo"
                     height="30">Yao&#39;s World</a>
             <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
         </div>
         <ul id="menu">
@@ -184,33 +166,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
-
-    let detail = document.getElementsByClassName('details')
-   
-    details = [].slice.call(detail);
-   
-    for (let index = 0; index < details.length; index++) {
-   
-    let element = details[index]
-   
-    const summary = element.getElementsByClassName('details-summary')[0];
-   
-    if (summary) {
-   
-    summary.addEventListener('click', () => {
-   
-    element.classList.toggle('open');
-   
-    }, false);
-   
-    }
-   
-    }
-
-   
-</script>
-
+</a>
 
 <script>
     let menu = document.getElementById('menu')
@@ -254,11 +210,22 @@
     };
 
 </script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 
     <link rel="stylesheet" href="/css/cursor.css">
     <script src="https://actuallyyao.com/js/cursor.js"></script>
-    
-
 </body>
 
-</html>
+
+
