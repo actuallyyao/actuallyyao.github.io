@@ -1,0 +1,136 @@
+.first-entry {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 320px;
+    margin: var(--gap) 0 calc(var(--gap) * 2) 0;
+}
+
+.first-entry .entry-header {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.first-entry .entry-header h1 {
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.first-entry .entry-content {
+    margin: 14px 0;
+    font-size: 16px;
+    -webkit-line-clamp: 3;
+}
+
+.first-entry .entry-footer {
+    font-size: 14px;
+}
+
+.home-info .entry-content {
+    -webkit-line-clamp: unset;
+}
+
+.post-entry {
+    position: relative;
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    background: #51515114;
+    border-radius: var(--radius);
+    transition: transform 0.1s;
+    /* border: 1px solid var(--border); */
+    transition: transform 0.5s, border-color .2s;
+    min-height: 150px;
+
+}
+
+.post-entry:hover {
+    border-color: var(--border-hover);
+    transform: scale(1.01);
+}
+
+.post-entry:active {
+    transform: scale(0.96);
+}
+
+.post-entry:after {
+    background: linear-gradient(
+        transparent,
+        white,
+        transparent
+    );
+    height: 50px;
+    width: 1px;
+    position: absolute;
+    left: -1px;
+    top: 65%;
+    opacity: 0;
+    content: "";
+    transition: top 600ms ease, opacity 600ms ease;
+}
+
+.post-entry:hover:after {
+    top: 20%;
+    opacity: 1;
+}
+
+
+.tag-entry .entry-cover {
+    display: none;
+}
+
+.entry-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    /* text-align: center; */
+}
+
+.entry-content {
+    margin: 8px 0;
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.entry-footer {
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+.entry-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.entry-cover,
+.entry-isdraft {
+    font-size: 14px;
+    color: var(--secondary);
+}
+
+.entry-cover {
+    margin-bottom: var(--gap);
+    text-align: center;
+}
+
+.entry-cover img {
+    border-radius: var(--radius);
+    pointer-events: none;
+    width: 100%;
+    height: auto;
+}
+
+.entry-cover a {
+    color: var(--secondary);
+    box-shadow: 0 1px 0 var(--primary);
+}
+

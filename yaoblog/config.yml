@@ -1,0 +1,153 @@
+baseURL: "https://actuallyyao.com/"
+languageCode: en-us
+title: Yao's World
+theme: PaperMod
+
+enableInlineShortcodes: true #允许内联短码
+enableEmoji: true # 允许使用 Emoji 表情，建议 true
+enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
+# summaryLength: 140 #为了内部文章引用加的，但是发现没用
+hasCJKLanguage: true
+
+
+highlight: "background-color: #c29a56;" 
+
+params:
+  profileMode:
+    enabled: true
+    title: "Yao's World" # optional default will be site title
+    subtitle: "So you've stumbled upon me, again..."
+    imageUrl: "img/avatar.png" # optional
+    imageTitle: "avatar" # optional
+    imageWidth: 180 # custom size
+    imageHeight: 180 # custom size
+    buttons:
+      - name: Posts
+        url: "/posts/"
+      - name: About
+        url: "/about/"
+      - name: Tags
+        url: "/tags/"
+  socialIcons: # optional
+    - name: github
+      url: "https://github.com/actuallyyao"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/%E7%82%B3%E6%97%AD-%E5%A7%9A-645887141/"
+    - name: "email"
+      url: "mailto:bingxu.yao@hotmail.com"
+  fancybox: true
+
+  twikoo:
+      version: 1.6.9
+
+
+  # homeInfoParams:
+  #   Title: Hello Stranger!
+  #   content: I'm still building it. Wait for the good stuff!
+  # socialIcons:
+  #   - name: github
+  #     url: "https://github.com/actuallyyao"
+
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Actually Yao's personal blog where I share my thoughts and life"
+  author: Yao
+  # author: ["Me", "You"] # multiple authors
+  defaultTheme: dark  # defaultTheme: light or  dark 
+  disableThemeToggle: false
+  DateFormat: "2006-01-02"
+  # ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecialistPost: true
+  displayFullLangName: true
+  # ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideFooter: true # 隐藏页脚
+  ShowWordCounts: true
+  VisitCount: true
+  ShowLastMod: true #显示文章更新时间
+  ShowToc: true # 显示目录
+  TocOpen: true # 自动展开目录
+  comments: true
+  # cover: 
+  #   linFullImages: true
+  label:
+    text: "Yao's World"
+    icon: "/img/icon.png"
+    iconHeight: 30
+
+  assets:
+    disableHLJS: true
+    favicon: "/favicon/favicon.ico"
+    favicon16x16: "/favicon/favicon-16x16.png"
+    favicon32x32: "/favicon/favicon-32x32.png"
+    apple_touch_icon: "/favicon/apple-touch-icon.png"
+    safari_pinned_tab: "/favicon/safari-pinned-tab.svg"
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 1
+    # - identifier: home
+    #   name: Home
+    #   url: /
+    #   weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 40
+    - identifier: reading
+      name: Reading
+      url: "https://actuallyyao.notion.site/Reading-Tracker-4917df096e07426a8243682880c71330"
+      weight: 45
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 50
+
+
+
+# 搜索结果
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+# 代码
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        # anchorLineNos: false
+        codeFences: true
+        guessSyntax: true
+        lineNos: true
+        # # 设置noClasses为false需要手动生成css，放在assets/css/extended/中
+        # # 生成方式为 hugo gen chromastyles --style=dracula > assets/css/extended/chroma.css，其中dracula可以更换为任意代码主题
+        noClasses: false
+        # # noClasses为false时，style失效，因此必须手动生成css
+        style: base16-snazzy
+        # lineNumbersInTable: false
+
+    # highlight:
+    #   lineNos: true
+    #   codeFences: true
+    #   guessSyntax: true
+    #   style: solarized-dark
+    #   # style: monokai
+    #   tabWidth: 4
+    #   noClasses: true
+    #   lineNumbersInTable: true
+
