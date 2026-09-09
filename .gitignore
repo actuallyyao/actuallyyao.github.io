@@ -1,0 +1,7 @@
+# macOS metadata
+.DS_Store
+
+# Hugo-generated output and build cache for the source tree
+/yaoblog/public/
+/yaoblog/resources/
+/yaoblog/.hugo_build.lock

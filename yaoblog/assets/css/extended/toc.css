@@ -1,0 +1,130 @@
+:root {
+	--nav-width: 1380px;
+	--article-width: 650px;
+	--toc-width: 300px;
+}
+
+.toc {
+	margin: 0 2px 40px 2px;
+	border: 1px solid var(--border);
+	background: var(--entry);
+	border-radius: var(--radius);
+	padding: 0.4em;
+}
+
+.toc-container {
+	position: fixed;
+	left: calc((var(--toc-width) + var(--gap)) * 0.2);
+	top: 40%;
+}
+
+.wide .toc {
+	position: sticky;
+	top: var(--gap);
+	border: unset;
+	background: unset;
+	border-radius: unset;
+	width: 100%;
+	margin: 0 2px 40px 2px;
+}
+
+.toc details summary {
+	cursor: zoom-in;
+	margin-inline-start: 20px;
+	padding: 12px 0;
+}
+
+/* .toc details[open] summary {
+	font-weight: 500;
+} */
+
+.toc .inner {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.toc-container.wide .toc .inner {
+	margin: 0;
+}
+
+.toc ul {
+	list-style-type: disc;
+}
+
+.toc li ul {
+	margin-inline-start: calc(var(--gap) * 0);
+	list-style-type: circle;
+}
+
+.toc li::marker {
+    color: var(--toc-inactive-hover);
+}
+
+/* .toc li .active::marker {
+	color: var(--primary);
+}
+
+.toc li :not(.active)::marker {
+	color: var(--secondary);
+} */
+
+.toc li a.active {
+	color: var(--primary);
+	transition: ease-in-out 0.5s;
+}
+
+.toc li a.active:hover {
+	box-shadow: none;
+}
+
+.toc li a:not(.active) {
+	color: transparent;
+	transition: all 0.5s;
+}
+
+.toc li a:not(.active):hover {
+	color: var(--primary);
+    box-shadow: none;
+	transition: all 0.5s;
+}
+
+.toc:hover li :not(.active) {
+	color: var(--toc-inactive-hover);
+}
+
+@media only screen and (max-width: 1367px) {
+	.toc {
+		display: none;
+	}
+}
+
+/* .toc-container.wide {
+    position: absolute;
+    height: 100%;
+    right: 1px solid var(--border);
+    left: calc((var(--toc-width) + var(--gap)) * -1);
+    top: calc(var(--gap) * 2);
+    width: var(--toc-width);
+} */
+
+/* .toc ul {
+    list-style-type: circle;
+}
+
+.toc .inner {
+    margin: 0 0 0 20px;
+    padding: 0px 15px 15px 20px;
+    font-size: 16px;
+}
+
+.toc li ul {
+    margin-inline-start: calc(var(--gap) * 0.5);
+    list-style-type: circle;
+}
+
+.toc li {
+    list-style: inside;
+    list-style-type: circle;
+    font-size: 0.95rem;
+    padding-bottom: 5px;
+} */
