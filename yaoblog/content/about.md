@@ -1,7 +1,6 @@
 ---
 title : "About"
 hidemeta : true
-comments : false #optional
 showBreadCrumbs: false
 showToc: false
 ---
@@ -13,4 +12,3 @@ I use [HUGO](https://gohugo.io/) and [PaperMod](https://github.com/adityatelange
 Feel free to reach out to me by [email](mailto:bingxu.yao@hotmail.com) if you would like to chat.
 
 <!-- <font size="3">[My CV](/file/BingxuYaoCV.pdf)</font> -->
-
