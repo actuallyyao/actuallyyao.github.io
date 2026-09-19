@@ -37,10 +37,6 @@ params:
       url: "mailto:bingxu.yao@hotmail.com"
   fancybox: true
 
-  twikoo:
-      version: 1.6.9
-
-
   # homeInfoParams:
   #   Title: Hello Stranger!
   #   content: I'm still building it. Wait for the good stuff!
@@ -68,7 +64,6 @@ params:
   ShowLastMod: true #显示文章更新时间
   ShowToc: true # 显示目录
   TocOpen: true # 自动展开目录
-  comments: true
   # cover: 
   #   linFullImages: true
   label:
@@ -150,4 +145,3 @@ markup:
     #   tabWidth: 4
     #   noClasses: true
     #   lineNumbersInTable: true
-
