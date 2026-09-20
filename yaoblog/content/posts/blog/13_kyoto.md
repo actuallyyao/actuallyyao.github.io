@@ -1,7 +1,8 @@
 ---
 title: "Kyoto"
 date: 2023-12-07T11:59:00+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ["Life"]
 keywords:
     - kyoto

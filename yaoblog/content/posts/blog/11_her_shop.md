@@ -1,7 +1,8 @@
 ---
 title: "Her Shop"
 date: 2023-07-04T20:47:00+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ["Life"]
 keywords:
     - art

@@ -2,6 +2,7 @@
 title: "Test"
 date: 2022-12-25T01:02:51+08:00
 draft: true
+hiddenInHomeList: true
 tags: ['Test']
 description: 写作的测试都在这里做
 ShowWordCount: true
@@ -115,5 +116,4 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 <font size="3">{{< align center "文字居左" >}}</font>
 
 {{< douban "https://book.douban.com/subject/35496106/">}}
-
 

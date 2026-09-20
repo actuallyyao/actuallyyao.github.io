@@ -1,7 +1,8 @@
 ---
 title: "琵琶行"
 date: 2023-02-12T12:13:51+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 keywords:
 - 琵琶行
 - 霞鹜文楷

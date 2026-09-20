@@ -1,7 +1,8 @@
 ---
 title: "我是如何学习数据分析的"
 date: 2022-12-30T21:44:51+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ["SQL", "Data"]
 ShowWordCount: true
 # cover:

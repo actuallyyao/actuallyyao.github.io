@@ -1,0 +1,73 @@
+{{- $page := .page -}}
+{{- $icon := .icon | default (printf "shape-%d" (mod .index 8)) -}}
+{{- if $page -}}
+    {{- $pathKey := replaceRE "^posts/" "" $page.File.Path -}}
+    {{- $pathKey = replaceRE "\\.md$" "" $pathKey -}}
+    {{- $key := lower (replaceRE "[^a-z0-9_-]+" "-" $pathKey) -}}
+    {{- $abstract := resources.Get (printf "generated/abstract/%s.svg" $key) -}}
+    {{- if $abstract -}}
+        <img class="nan-post__abstract" src="{{ $abstract.RelPermalink }}" alt="" width="80" height="80" loading="lazy" decoding="async">
+    {{- else -}}
+        {{ partial "home-icon.html" (dict "icon" $icon "index" .index) }}
+    {{- end -}}
+{{- else -}}
+{{- if eq $icon "book" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m19 25 38-9 5 36-38 10-5-37Z"/><path d="m19 25 11 8 32-8"/><path d="m24 39 31-8"/><path d="m30 33 5 29"/>
+</svg>
+{{- else if eq $icon "music" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="27" cy="56" r="9"/><circle cx="58" cy="47" r="9"/><path d="M36 56V20l31-7v34M36 28l31-7"/>
+</svg>
+{{- else if eq $icon "screen" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="18" width="43" height="29" rx="2"/><path d="M25 61h27M33 47v14M55 28h13v23H55"/>
+</svg>
+{{- else if eq $icon "camera" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 28h54v34H13z"/><path d="m24 28 5-8h16l5 8"/><circle cx="40" cy="45" r="10"/><circle cx="58" cy="35" r="2"/>
+</svg>
+{{- else if eq $icon "mountain" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m10 60 22-35 13 20 8-12 17 27H10Z"/><path d="m32 25 6 10m-15 14 8 3m18-7 8 4"/>
+</svg>
+{{- else if eq $icon "grid" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="14" y="14" width="17" height="17"/><rect x="45" y="14" width="17" height="17"/>
+    <rect x="14" y="45" width="17" height="17"/><rect x="45" y="45" width="17" height="17"/>
+</svg>
+{{- else if eq $icon "shape-1" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 57 39 18l25 39H15Z"/><path d="m39 18 8 13M25 45l10 3m12-8 12 4"/>
+</svg>
+{{- else if eq $icon "shape-2" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="37" cy="36" r="19"/><path d="m51 50 14 14m-29-29 10-9"/>
+</svg>
+{{- else if eq $icon "shape-3" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18h50v45H15zM15 31h50M29 18v45M52 18v45"/>
+</svg>
+{{- else if eq $icon "shape-4" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 54V25l23-12 23 12v29L40 66 17 54Z"/><path d="m17 25 23 12 23-12M40 37v29"/>
+</svg>
+{{- else if eq $icon "shape-5" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 59V28l20-12 20 12v31"/><path d="M20 39h40M31 33v26M49 33v26"/><path d="M14 64h52"/>
+</svg>
+{{- else if eq $icon "shape-6" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 13v16m0 22v16M13 40h16m22 0h16M21 21l11 11m16 16 11 11m0-38L48 32M32 48 21 59"/>
+    <circle cx="40" cy="40" r="10"/>
+</svg>
+{{- else if eq $icon "shape-7" -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m17 40 23-23 23 23-23 23-23-23Z"/><path d="M40 17v46M17 40h46"/>
+</svg>
+{{- else -}}
+<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m17 40 23-23 23 23-23 23-23-23Z"/><path d="M40 17v46M17 40h46"/>
+</svg>
+{{- end -}}
+{{- end -}}

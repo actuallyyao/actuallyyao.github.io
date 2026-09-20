@@ -1,7 +1,8 @@
 ---
 title: "Useful SQL"
 date: 2022-10-14T21:44:51+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ['SQL', 'Data']
 ShowWordCount: true
 # cover:
@@ -80,4 +81,3 @@ LIMIT
 `sort_array(Array<T> a)` 根据数组元素的自然顺序按升序对输入数组排序并返回它
 
 `select sort_array(collect_set(col))`
-

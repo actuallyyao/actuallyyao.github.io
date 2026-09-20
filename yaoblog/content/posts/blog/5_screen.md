@@ -1,7 +1,8 @@
 ---
 title: "25+27吋屏幕给了我什么"
 date: 2023-02-16T20:53:51+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ['Life']
 keywords:
 - 显示器

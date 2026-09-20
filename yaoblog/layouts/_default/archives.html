@@ -1,0 +1,33 @@
+{{- define "main" -}}
+{{- $sourcePages := where site.RegularPages "Section" "posts" -}}
+{{- $pages := slice -}}
+{{- range $sourcePages -}}
+    {{- if and (or hugo.IsDevelopment (not .Draft)) (ne .Params.hiddenInHomeList true) (ne .Params.hiddenInHomeList "true") -}}
+        {{- if not (findRE " 2\\.md$" .File.Path) }}{{ $pages = $pages | append . }}{{ end -}}
+    {{- end -}}
+{{- end -}}
+{{- $pages = sort $pages "Date" "desc" -}}
+
+<div class="nan-page-frame nan-archive-page">
+    <header class="nan-page-header">
+        <div class="nan-page-header__eyebrow">Yao's World <span aria-hidden="true">·</span> Timeline</div>
+        <h1>{{ .Title }}</h1>
+        {{- with .Description }}<p>{{ . }}</p>{{ end -}}
+    </header>
+
+    {{- range $pages.GroupByPublishDate "2006" -}}
+    {{- if ne .Key "0001" }}
+    <section class="nan-archive-year">
+        <h2>{{ .Key }} <sup>{{ len .Pages }}</sup></h2>
+        {{- range .Pages }}
+        <a class="nan-archive-entry" href="{{ .RelPermalink }}">
+            <span class="nan-archive-entry__title">{{ .Title }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <span class="nan-archive-entry__arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end }}
+    </section>
+    {{- end }}
+    {{- end }}
+</div>
+{{- end -}}

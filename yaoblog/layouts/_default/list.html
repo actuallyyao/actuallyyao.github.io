@@ -1,0 +1,29 @@
+{{- define "main" -}}
+{{- $pages := .RegularPages -}}
+{{- if eq .RelPermalink "/posts/" }}{{ $pages = where site.RegularPages "Section" "posts" }}{{ end -}}
+{{- $cleanPages := slice -}}
+{{- range $pages -}}
+    {{- if and (or hugo.IsDevelopment (not .Draft)) (ne .Params.hiddenInHomeList true) (ne .Params.hiddenInHomeList "true") -}}
+        {{- $duplicate := false -}}
+        {{- with .File }}{{- if findRE " 2\\.md$" .Path }}{{ $duplicate = true }}{{ end }}{{ end -}}
+        {{- if not $duplicate }}{{ $cleanPages = $cleanPages | append . }}{{ end -}}
+    {{- end -}}
+{{- end -}}
+{{- $cleanPages = sort $cleanPages "Date" "desc" -}}
+
+<div class="nan-page-frame nan-list-page">
+    <header class="nan-page-header">
+        <div class="nan-page-header__eyebrow">Yao's World <span aria-hidden="true">·</span> Index</div>
+        <h1>{{ .Title | default "Posts" }}</h1>
+        {{- with .Description }}<p>{{ . | markdownify }}</p>{{ end -}}
+    </header>
+
+    {{- if .Content }}<div class="nan-page-prose">{{ .Content }}</div>{{ end -}}
+
+    {{- if gt (len $cleanPages) 0 -}}
+        {{ partial "nan-post-rows.html" (dict "pages" $cleanPages) }}
+    {{- else -}}
+        <p class="nan-empty">No articles yet.</p>
+    {{- end -}}
+</div>
+{{- end -}}
