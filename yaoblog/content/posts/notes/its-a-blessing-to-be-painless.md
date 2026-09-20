@@ -1,7 +1,7 @@
 ---
 title: "It's a Blessing to Be Painless"
 date: 2026-08-03T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Opinions", "Books", "Health"]
 description: "A note on pain, health, and Haruki Murakami's What I Talk About When I Talk About Running."
 ShowToc: false

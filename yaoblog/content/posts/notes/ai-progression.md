@@ -1,7 +1,7 @@
 ---
 title: "AI's Progression"
 date: 2026-09-08T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Opinions", "AI", "Work"]
 description: "A reflection on how AI has changed the way I work since mid-2025."
 ShowToc: false

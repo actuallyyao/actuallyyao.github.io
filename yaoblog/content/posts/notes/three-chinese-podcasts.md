@@ -1,7 +1,7 @@
 ---
 title: "Three Chinese Podcasts Worth Listening To"
 date: 2026-07-22T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Podcasts", "Chinese Media"]
 description: "A short list of Chinese-language podcasts that offer a broad view of the world without being overly preachy."
 ShowToc: false

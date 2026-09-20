@@ -1,7 +1,7 @@
 ---
 title: "A Fulfilling Spiritual Life"
 date: 2026-07-24T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Opinions", "Life"]
 description: "A reflection on money, health, and the cultivation of an inner world."
 ShowToc: false

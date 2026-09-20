@@ -1,7 +1,7 @@
 ---
 title: "The Role of Strategy & Operations in the AI Era"
 date: 2026-09-15T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Opinions", "AI", "Strategy"]
 description: "A projection of how strategy and operations work may evolve across manual, AI-assisted, and AI-led eras."
 ShowToc: false
