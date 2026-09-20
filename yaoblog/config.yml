@@ -9,9 +9,6 @@ enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
 # summaryLength: 140 #为了内部文章引用加的，但是发现没用
 hasCJKLanguage: true
 
-
-highlight: "background-color: #c29a56;" 
-
 params:
   profileMode:
     enabled: true
@@ -48,8 +45,8 @@ params:
   description: "Actually Yao's personal blog where I share my thoughts and life"
   author: Yao
   # author: ["Me", "You"] # multiple authors
-  defaultTheme: light  # defaultTheme: light or dark
-  disableThemeToggle: false
+  defaultTheme: light
+  disableThemeToggle: true
   DateFormat: "2006-01-02"
   # ShowShareButtons: true
   ShowReadingTime: true
@@ -57,7 +54,7 @@ params:
   displayFullLangName: true
   # ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
+  ShowCodeCopyButtons: false
   hideFooter: true # 隐藏页脚
   ShowWordCounts: true
   VisitCount: true
@@ -125,23 +122,8 @@ markup:
         renderer:
             unsafe: true
     highlight:
-        # anchorLineNos: false
         codeFences: true
         guessSyntax: true
-        lineNos: true
-        # # 设置noClasses为false需要手动生成css，放在assets/css/extended/中
-        # # 生成方式为 hugo gen chromastyles --style=dracula > assets/css/extended/chroma.css，其中dracula可以更换为任意代码主题
+        lineNos: false
         noClasses: false
-        # # noClasses为false时，style失效，因此必须手动生成css
-        style: base16-snazzy
-        # lineNumbersInTable: false
-
-    # highlight:
-    #   lineNos: true
-    #   codeFences: true
-    #   guessSyntax: true
-    #   style: solarized-dark
-    #   # style: monokai
-    #   tabWidth: 4
-    #   noClasses: true
-    #   lineNumbersInTable: true
+        style: github
