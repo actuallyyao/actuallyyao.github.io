@@ -8,7 +8,7 @@ body.homepage {
     --nan-muted: hsl(0 0% 43.5%);
     --nan-pattern: hsl(0 0% 88.7%);
     padding-top: 0;
-    background: var(--nan-gray6);
+    background: var(--nan-gray4);
     color: var(--nan-text);
     font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
 }

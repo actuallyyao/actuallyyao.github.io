@@ -23,16 +23,6 @@ body:not(.homepage) {
     line-height: 1.7;
 }
 
-body:not(.homepage)::before {
-    position: fixed;
-    z-index: -1;
-    inset: 0;
-    pointer-events: none;
-    content: "";
-    opacity: .58;
-    background-image: repeating-linear-gradient(-45deg, var(--nan-border) 0, var(--nan-border) 1px, transparent 1px, transparent 8px);
-}
-
 body:not(.homepage) a { color: inherit; }
 
 body:not(.homepage) .main {
