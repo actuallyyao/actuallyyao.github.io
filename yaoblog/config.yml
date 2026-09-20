@@ -48,7 +48,7 @@ params:
   description: "Actually Yao's personal blog where I share my thoughts and life"
   author: Yao
   # author: ["Me", "You"] # multiple authors
-  defaultTheme: dark  # defaultTheme: light or  dark 
+  defaultTheme: light  # defaultTheme: light or dark
   disableThemeToggle: false
   DateFormat: "2006-01-02"
   # ShowShareButtons: true

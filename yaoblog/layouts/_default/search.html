@@ -1,0 +1,16 @@
+{{- define "main" -}}
+<div class="nan-page-frame nan-search-page">
+    <header class="nan-page-header">
+        <div class="nan-page-header__eyebrow">Yao's World <span aria-hidden="true">·</span> Find</div>
+        <h1>{{ .Title }}</h1>
+        {{- with .Description }}<p>{{ . }}</p>{{ end -}}
+    </header>
+
+    <div id="searchbox" class="nan-searchbox">
+        <label for="searchInput">Search the archive</label>
+        <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default "Search posts" }}"
+            aria-label="Search posts" type="search" autocomplete="off">
+        <ul id="searchResults" aria-label="Search results"></ul>
+    </div>
+</div>
+{{- end -}}

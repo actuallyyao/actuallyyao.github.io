@@ -1,0 +1,25 @@
+{{- $pages := .pages -}}
+<ul class="nan-post-list">
+    {{- range $index, $page := $pages -}}
+    {{- $summary := $page.Description -}}
+    {{- if not $summary }}{{ $summary = $page.Summary }}{{ end -}}
+    {{- $summary = $summary | plainify | htmlUnescape | replaceRE "[[:space:]]+" " " | truncate 190 -}}
+    <li class="nan-post">
+        <a class="nan-post__link" href="{{ $page.RelPermalink }}" aria-label="Read {{ $page.Title }}">
+            <span class="nan-post__icon" aria-hidden="true">
+                {{ partial "home-icon.html" (dict "page" $page "icon" $page.Params.icon "index" $index) }}
+            </span>
+            <span class="nan-post__body">
+                <span class="nan-post__heading">
+                    <span class="nan-post__title">{{ $page.Title }}</span>
+                    {{- if not $page.Date.IsZero }}
+                    <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "January 2, 2006" }}</time>
+                    {{- end }}
+                </span>
+                <span class="nan-post__summary">{{ $summary }}</span>
+            </span>
+            <span class="nan-post__arrow" aria-hidden="true">→</span>
+        </a>
+    </li>
+    {{- end -}}
+</ul>

@@ -1,7 +1,8 @@
 ---
 title: "Six Things Mentally Strong People Do"
 date: 2023-03-17T12:35:51+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ['Life']
 keywords:
 - Six Things Mentally Strong People Do

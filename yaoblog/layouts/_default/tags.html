@@ -1,0 +1,22 @@
+{{- define "main" -}}
+<div class="nan-page-frame nan-terms-page">
+    <header class="nan-page-header">
+        <div class="nan-page-header__eyebrow">Yao's World <span aria-hidden="true">·</span> Topics</div>
+        <h1>{{ .Title | default "Tags" }}</h1>
+        {{- with .Description }}<p>{{ . }}</p>{{ end -}}
+    </header>
+
+    <div class="nan-term-grid">
+        {{- range site.Taxonomies.tags.Alphabetical -}}
+        {{- $term := . -}}
+        {{- with .Page -}}
+        <a class="nan-term-card" href="{{ .RelPermalink }}">
+            <span>{{ .Name }}</span>
+            <small>{{ $term.Count }} {{ if eq $term.Count 1 }}post{{ else }}posts{{ end }}</small>
+            <span class="nan-term-card__arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end -}}
+        {{- end -}}
+    </div>
+</div>
+{{- end -}}

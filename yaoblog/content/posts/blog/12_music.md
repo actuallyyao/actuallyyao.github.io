@@ -1,7 +1,8 @@
 ---
 title: "イルカポリス海豚刑警"
 date: 2023-07-26T23:47:00+08:00
-draft: False
+draft: true
+hiddenInHomeList: true
 tags: ["Life"]
 keywords:
 ShowWordCount: true

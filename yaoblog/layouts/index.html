@@ -1,0 +1,139 @@
+{{- define "main" -}}
+{{- $sourcePages := where site.RegularPages "Section" "posts" -}}
+{{- $visiblePages := slice -}}
+{{- range $sourcePages -}}
+    {{- $include := not .Draft -}}
+    {{- if and hugo.IsDevelopment .Draft (hasPrefix .File.Path "posts/notes/") }}{{- $include = true -}}{{- end -}}
+    {{- if and $include (ne .Params.hiddenInHomeList true) (ne .Params.hiddenInHomeList "true") -}}
+        {{- if not (findRE " 2\\.md$" .File.Path) -}}
+            {{- $visiblePages = $visiblePages | append . -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- $pages := sort $visiblePages "Date" "desc" -}}
+
+<div class="nan-page">
+    <div class="nan-home">
+        <aside class="nan-sidebar" aria-label="About Yao">
+            <div class="nan-sidebar__inner">
+                <h1 class="nan-brand">
+                    <a href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} home">
+                        <span>Yao's</span>
+                        <span>World</span>
+                    </a>
+                </h1>
+
+                <div class="nan-sidebar__intro">
+                    <p>
+                        Personal notes on technology, life, and learning by
+                        <a href="{{ "about/" | relURL }}">Yao.</a>
+                    </p>
+                    <a class="nan-sidebar__button" href="{{ "about/" | relURL }}">About</a>
+                </div>
+
+                <nav class="nan-sidebar__nav" aria-label="Site navigation">
+                    <a href="{{ "posts/" | relURL }}">Posts</a>
+                    <a href="{{ "tags/" | relURL }}">Tags</a>
+                    <a href="{{ "archives/" | relURL }}">Archives</a>
+                    <a href="{{ "search/" | relURL }}">Search</a>
+                </nav>
+
+                <footer class="nan-sidebar__footer">
+                    <div class="nan-sidebar__socials" aria-label="Social links">
+                        {{- range site.Params.socialIcons }}
+                        <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me"
+                            title="{{ (.title | default .name) | title }}">
+                            {{ partial "svg.html" . }}
+                        </a>
+                        {{- end }}
+                        <button id="nan-theme-toggle" type="button" aria-label="Switch to light mode"
+                            title="Switch theme">
+                            <svg class="nan-theme-toggle__sun" aria-hidden="true" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                            </svg>
+                            <svg class="nan-theme-toggle__moon" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20.5 14.4A8.5 8.5 0 0 1 9.6 3.5 8.5 8.5 0 1 0 20.5 14.4Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <span>© 2021 - {{ now.Year }}</span>
+                </footer>
+            </div>
+        </aside>
+
+        <section class="nan-content" aria-label="Articles">
+            {{- if gt (len $pages) 0 -}}
+            {{- $featured := index $pages 0 -}}
+            {{- $featuredSummary := $featured.Description -}}
+            {{- if not $featuredSummary -}}
+                {{- $featuredSummary = $featured.Summary -}}
+            {{- end -}}
+            {{- $featuredSummary = $featuredSummary | plainify | htmlUnescape | replaceRE "[[:space:]]+" " " | truncate 170 -}}
+            <div class="nan-feature-area">
+                <a class="nan-feature" href="{{ $featured.RelPermalink }}" aria-label="Read {{ $featured.Title }}">
+                    <span class="nan-feature__corner nan-feature__corner--top-left" aria-hidden="true">×</span>
+                    <span class="nan-feature__corner nan-feature__corner--top-right" aria-hidden="true">×</span>
+                    <span class="nan-feature__corner nan-feature__corner--bottom-left" aria-hidden="true">×</span>
+                    <span class="nan-feature__corner nan-feature__corner--bottom-right" aria-hidden="true">×</span>
+                    <span class="nan-feature__title">{{ $featured.Title }}</span>
+                    <span class="nan-feature__summary">{{ $featuredSummary }}</span>
+                    <span class="nan-feature__arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <ul class="nan-post-list">
+                {{- range $index, $page := after 1 $pages -}}
+                {{- $summary := $page.Description -}}
+                {{- if not $summary -}}
+                    {{- $summary = $page.Summary -}}
+                {{- end -}}
+                {{- $summary = $summary | plainify | htmlUnescape | replaceRE "[[:space:]]+" " " | truncate 190 -}}
+                <li class="nan-post">
+                    <a class="nan-post__link" href="{{ $page.RelPermalink }}" aria-label="Read {{ $page.Title }}">
+                        <span class="nan-post__icon" aria-hidden="true">
+                            {{ partial "home-icon.html" (dict "page" $page "icon" $page.Params.icon "index" (add $index 1)) }}
+                        </span>
+                        <span class="nan-post__body">
+                            <span class="nan-post__heading">
+                                <span class="nan-post__title">{{ $page.Title }}</span>
+                                <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "January 2, 2006" }}</time>
+                            </span>
+                            <span class="nan-post__summary">{{ $summary }}</span>
+                        </span>
+                        <span class="nan-post__arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+                {{- end -}}
+            </ul>
+            {{- else -}}
+            <p class="nan-empty">No articles yet.</p>
+            {{- end -}}
+        </section>
+    </div>
+</div>
+
+<script>
+    (() => {
+        const toggle = document.getElementById('nan-theme-toggle');
+        const legacyToggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        const syncLabel = () => {
+            const isDark = document.body.classList.contains('dark');
+            toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        };
+
+        syncLabel();
+        toggle.addEventListener('click', () => {
+            if (legacyToggle) {
+                legacyToggle.click();
+            } else {
+                document.body.classList.toggle('dark');
+                localStorage.setItem('pref-theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            }
+            syncLabel();
+        });
+    })();
+</script>
+{{- end -}}

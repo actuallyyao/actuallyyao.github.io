@@ -2,6 +2,7 @@
 title: "对于「中文互联网在枯萎」的想法"
 date: 2023-03-23T12:12:51+08:00
 draft: True
+hiddenInHomeList: true
 tags: ["Life"]
 keywords:
 ShowWordCount: true
