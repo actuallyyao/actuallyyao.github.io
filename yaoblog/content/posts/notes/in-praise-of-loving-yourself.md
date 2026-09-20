@@ -1,7 +1,7 @@
 ---
 title: "In Praise of Loving Yourself"
 date: 2026-07-23T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Opinions", "Self-Care"]
 description: "A dog analogy for eating well, sleeping well, exercising, and loving yourself."
 ShowToc: false

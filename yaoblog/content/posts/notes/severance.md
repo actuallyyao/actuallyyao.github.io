@@ -1,7 +1,7 @@
 ---
 title: "Severance"
 date: 2026-09-15T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Books", "Reading", "Fiction"]
 description: "A reading note on Ling Ma's Severance."
 ShowToc: false

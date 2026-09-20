@@ -1,7 +1,7 @@
 ---
 title: "Use AI for Self-Exploration"
 date: 2026-09-01T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Opinions", "AI", "Self-Reflection"]
 description: "AI can be useful not only for producing outputs, but also for understanding who we are and what we want."
 ShowToc: false

@@ -1,7 +1,7 @@
 ---
 title: "The Worlds I See"
 date: 2026-09-18T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Books", "AI", "Reading"]
 description: "A reading note on Fei-Fei Li's memoir and the human side of artificial intelligence."
 ShowToc: false

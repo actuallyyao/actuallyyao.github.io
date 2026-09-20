@@ -1,7 +1,7 @@
 ---
 title: "The Muscle & Strength Pyramid — Nutrition"
 date: 2026-08-05T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Books", "Reading", "Health"]
 description: "Reading notes on The Muscle & Strength Pyramid: Nutrition."
 ShowToc: false

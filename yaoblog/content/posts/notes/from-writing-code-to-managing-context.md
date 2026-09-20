@@ -1,7 +1,7 @@
 ---
 title: "From Writing Code to Managing Context"
 date: 2026-09-18T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Quotes", "AI", "Programming"]
 description: "A note on how language models change the work of programmers."
 ShowToc: false

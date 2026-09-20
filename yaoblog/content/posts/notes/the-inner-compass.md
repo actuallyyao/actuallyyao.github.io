@@ -1,7 +1,7 @@
 ---
 title: "The Inner Compass"
 date: 2026-08-05T00:00:00+08:00
-draft: true
+draft: false
 tags: ["Books", "Reading", "Self-Reflection"]
 description: "A reading note on Lawrence Yeo's The Inner Compass."
 ShowToc: false
