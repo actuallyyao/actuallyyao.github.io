@@ -13,17 +13,6 @@ body.homepage {
     font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
 }
 
-body.homepage.dark {
-    --nan-gray4: hsl(0 0% 10%);
-    --nan-gray6: hsl(0 0% 15%);
-    --nan-gray7: hsl(0 0% 22%);
-    --nan-gray8: hsl(0 0% 33%);
-    --nan-gray11: hsl(0 0% 68%);
-    --nan-text: hsl(0 0% 96%);
-    --nan-muted: hsl(0 0% 68%);
-    --nan-pattern: hsl(0 0% 22%);
-}
-
 body.homepage::before {
     position: fixed;
     z-index: 0;
@@ -202,32 +191,6 @@ body.homepage .main {
     height: 16px;
 }
 
-#nan-theme-toggle {
-    cursor: pointer;
-    border: 0;
-    background: transparent;
-}
-
-#nan-theme-toggle svg {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.nan-theme-toggle__sun {
-    display: none;
-}
-
-body.homepage:not(.dark) .nan-theme-toggle__moon {
-    display: none;
-}
-
-body.homepage:not(.dark) .nan-theme-toggle__sun {
-    display: block;
-}
-
 .nan-content {
     min-width: 0;
     border-inline-start: 1px solid var(--nan-gray7);
@@ -358,10 +321,6 @@ body.homepage:not(.dark) .nan-theme-toggle__sun {
     height: 80px;
     border-radius: 9px;
     transition: filter 180ms ease;
-}
-
-body.homepage.dark .nan-post__icon .nan-post__abstract {
-    filter: invert(1);
 }
 
 .nan-post__body {

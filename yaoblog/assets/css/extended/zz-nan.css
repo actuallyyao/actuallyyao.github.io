@@ -2,7 +2,7 @@
 :root {
     --nan-font-sans: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --nan-font-serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-    --nan-font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --nan-font-mono: "Maple Mono", "Source Code Pro", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
     --nan-bg: hsl(0 0% 93%);
     --nan-surface: hsl(0 0% 96%);
     --nan-surface-strong: hsl(0 0% 100%);
@@ -10,8 +10,8 @@
     --nan-border-strong: hsl(0 0% 74%);
     --nan-ink: hsl(0 0% 7%);
     --nan-muted: hsl(0 0% 43.5%);
-    --nan-code-bg: hsl(0 0% 16%);
-    --nan-code-ink: hsl(0 0% 92%);
+    --nan-code-bg: hsl(0 0% 99%);
+    --nan-code-ink: #24292e;
 }
 
 body:not(.homepage) {
@@ -21,18 +21,6 @@ body:not(.homepage) {
     font-family: var(--nan-font-sans);
     font-size: 16px;
     line-height: 1.7;
-}
-
-body:not(.homepage).dark {
-    --nan-bg: hsl(0 0% 12%);
-    --nan-surface: hsl(0 0% 15%);
-    --nan-surface-strong: hsl(0 0% 18%);
-    --nan-border: hsl(0 0% 25%);
-    --nan-border-strong: hsl(0 0% 38%);
-    --nan-ink: hsl(0 0% 94%);
-    --nan-muted: hsl(0 0% 68%);
-    --nan-code-bg: hsl(0 0% 8%);
-    --nan-code-ink: hsl(0 0% 92%);
 }
 
 body:not(.homepage)::before {
@@ -98,41 +86,14 @@ body:not(.homepage) #menu.nan-nav__links {
 
 body:not(.homepage) #menu.nan-nav__links li + li { margin-inline-start: 0; }
 
-.nan-nav__links a,
-.nan-nav__theme {
+.nan-nav__links a {
     color: var(--nan-muted);
     font-size: 14px;
     font-weight: 600;
     transition: color 160ms ease, transform 160ms ease;
 }
 
-.nan-nav__links a:hover,
-.nan-nav__theme:hover { color: var(--nan-ink); }
-
-.nan-nav__theme {
-    display: inline-flex;
-    width: 20px;
-    height: 20px;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.nan-nav__theme svg {
-    width: 18px;
-    height: 18px;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.6;
-}
-
-body:not(.dark) .nan-nav__theme #sun,
-body.dark .nan-nav__theme #moon { display: none; }
+.nan-nav__links a:hover { color: var(--nan-ink); }
 
 .nan-page-frame {
     width: min(960px, calc(100% - 48px));
@@ -462,48 +423,113 @@ body.dark .nan-nav__theme #moon { display: none; }
 .nan-article__content tr:last-child td { border-bottom: 0; }
 
 .nan-article__content :not(pre) > code {
-    padding: .15em .4em;
-    border: 1px solid var(--nan-border);
+    padding: 2px 4px;
+    border: 0;
     border-radius: 4px;
-    background: var(--nan-surface);
+    background: hsl(0 0% 99%);
+    box-shadow: 0 0 0 1px rgb(10 10 10 / 15%);
     font-family: var(--nan-font-mono);
-    font-size: .85em;
+    font-size: .875em;
+    line-height: 1.25;
 }
 
-.nan-article__content .highlight,
-.nan-article__content pre:not(.chroma) {
-    position: relative;
-    margin: 1.6em 0;
-    padding: 22px;
+.nan-article__content .highlight:not(table) {
+    margin: 1.25em 0;
     overflow-x: auto;
-    border: 1px solid color-mix(in srgb, var(--nan-border-strong) 55%, transparent);
-    border-radius: 10px;
+    border-radius: 8px;
     background: var(--nan-code-bg) !important;
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--nan-ink) 8%, transparent);
+    box-shadow: 0 0 0 1px rgb(10 10 10 / 15%),
+        0 1px 3px rgb(0 0 0 / 10%),
+        0 1px 2px -1px rgb(0 0 0 / 10%);
+}
+
+.nan-article__content .highlight .chroma {
+    background: transparent !important;
+    color: var(--nan-code-ink);
 }
 
 .nan-article__content .highlight pre,
 .nan-article__content pre:not(.chroma) {
     margin: 0;
-    padding: 0;
+    padding: 16px;
+    overflow: visible;
     background: transparent !important;
     color: var(--nan-code-ink);
     font-family: var(--nan-font-mono);
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.5;
+    tab-size: 2;
 }
 
 .nan-article__content .highlight pre code,
-.nan-article__content pre code { font-family: inherit; }
+.nan-article__content pre code {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    color: var(--nan-code-ink) !important;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Primer-like syntax colors used by the reference site's code blocks. */
+.nan-article__content .chroma { color: #24292e; }
+.nan-article__content .chroma .k,
+.nan-article__content .chroma .kc,
+.nan-article__content .chroma .kd,
+.nan-article__content .chroma .kn,
+.nan-article__content .chroma .kp,
+.nan-article__content .chroma .kr,
+.nan-article__content .chroma .kt,
+.nan-article__content .chroma .o,
+.nan-article__content .chroma .ow { color: #d73a49; }
+.nan-article__content .chroma .nf,
+.nan-article__content .chroma .fm,
+.nan-article__content .chroma .nb,
+.nan-article__content .chroma .nc,
+.nan-article__content .chroma .nd { color: #6f42c1; }
+.nan-article__content .chroma .nv,
+.nan-article__content .chroma .vc,
+.nan-article__content .chroma .vg,
+.nan-article__content .chroma .vi,
+.nan-article__content .chroma .vm { color: #e36209; }
+.nan-article__content .chroma .s,
+.nan-article__content .chroma .sa,
+.nan-article__content .chroma .sb,
+.nan-article__content .chroma .sc,
+.nan-article__content .chroma .dl,
+.nan-article__content .chroma .sd,
+.nan-article__content .chroma .s2,
+.nan-article__content .chroma .se,
+.nan-article__content .chroma .sh,
+.nan-article__content .chroma .si,
+.nan-article__content .chroma .sx,
+.nan-article__content .chroma .sr { color: #032f62; }
+.nan-article__content .chroma .nt { color: #22863a; }
+.nan-article__content .chroma .m,
+.nan-article__content .chroma .mb,
+.nan-article__content .chroma .mf,
+.nan-article__content .chroma .mh,
+.nan-article__content .chroma .mi,
+.nan-article__content .chroma .il,
+.nan-article__content .chroma .mo,
+.nan-article__content .chroma .no { color: #005cc5; }
+.nan-article__content .chroma .c,
+.nan-article__content .chroma .ch,
+.nan-article__content .chroma .cm,
+.nan-article__content .chroma .c1,
+.nan-article__content .chroma .cs,
+.nan-article__content .chroma .cp,
+.nan-article__content .chroma .cpf { color: #6a737d; }
+.nan-article__content .chroma .p,
+.nan-article__content .chroma .n,
+.nan-article__content .chroma .nn,
+.nan-article__content .chroma .nx,
+.nan-article__content .chroma .w { color: #24292e; }
 
 .nan-article__content .copy-code {
-    top: 10px;
-    right: 10px;
-    border-color: color-mix(in srgb, var(--nan-code-ink) 25%, transparent);
-    background: transparent;
-    color: var(--nan-code-ink);
-    font-family: var(--nan-font-sans);
-    font-size: 11px;
+    display: none !important;
 }
 
 .nan-article__content .details { border: 1px dashed var(--nan-border-strong); border-radius: 8px; background: var(--nan-surface); }
@@ -554,7 +580,6 @@ body:not(.homepage) .footer { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
     .nan-nav__links a,
-    .nan-nav__theme,
     .nan-archive-entry,
     .nan-archive-entry__arrow,
     .nan-term-card,
